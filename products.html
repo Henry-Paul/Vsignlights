@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products – V SIGN Premium Signage</title>
+
+<meta name="description" content="Explore premium signage products including LED boards, ACP hoardings and 3D letters. Transparent pricing, professional installation, and trusted quality.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#0B5ED7;
+  --light:#F4F8FF;
+  --text:#0F172A;
+  --muted:#6B7280;
+  --border:#E5E7EB;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  color:var(--text);
+  background:#fff;
+}
+
+/* HEADER */
+header{
+  border-bottom:1px solid var(--border);
+  background:#fff;
+}
+.header-wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
+}
+nav a:hover{color:var(--blue);}
+
+/* HERO */
+.hero{
+  background:linear-gradient(180deg,#F4F8FF,white);
+  padding:80px 24px;
+}
+.hero-wrap{
+  max-width:1200px;
+  margin:auto;
+}
+.hero h1{
+  font-size:44px;
+  font-weight:700;
+}
+.hero h2{
+  margin-top:14px;
+  font-size:22px;
+  color:var(--muted);
+  max-width:800px;
+}
+.hero h3{
+  margin-top:24px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+/* SECTION */
+.section{
+  padding:70px 24px;
+}
+.wrap{
+  max-width:1200px;
+  margin:auto;
+}
+.section h2{
+  font-size:32px;
+  font-weight:600;
+}
+.section p{
+  margin-top:10px;
+  color:var(--muted);
+  max-width:760px;
+}
+
+/* PRODUCT GRID */
+.products{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+}
+.product{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:26px;
+  transition:.2s ease;
+}
+.product:hover{
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.product h3{
+  margin:0;
+  font-size:20px;
+}
+.product p{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--muted);
+}
+.price{
+  margin-top:16px;
+  font-weight:700;
+  color:var(--blue);
+}
+.product a{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 18px;
+  border:1px solid var(--blue);
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--blue);
+  font-weight:600;
+}
+.product a:hover{
+  background:var(--blue);
+  color:#fff;
+}
+
+/* PRODUCT FAQ */
+.product-faq{
+  margin-top:24px;
+  border-top:1px solid var(--border);
+  padding-top:16px;
+}
+.product-faq p{
+  font-size:13px;
+  margin:6px 0;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);
+  padding:40px 24px;
+  background:#F9FAFB;
+}
+footer .wrap{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+  font-size:14px;
+}
+footer a{
+  display:block;
+  margin-top:6px;
+  text-decoration:none;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-wrap">
+    <strong>V SIGN</strong>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wrap">
+    <h1>Signage products</h1>
+    <h2>Professionally engineered signage solutions designed for visibility, durability and brand impact.</h2>
+    <h3>Transparent pricing · Expert installation · Trusted quality</h3>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Our product range</h2>
+    <p>Each product is manufactured using premium materials and installed by experienced professionals.</p>
+
+    <div class="products">
+
+      <!-- LED SHOP BOARD -->
+      <div class="product">
+        <h3>LED Shop Boards</h3>
+        <p>Illuminated signage ideal for retail storefronts, clinics and showrooms.</p>
+        <div class="price">₹850 – ₹1,500 / sq ft</div>
+        <a href="contact.html">Enquire now</a>
+
+        <div class="product-faq">
+          <p><strong>Brightness:</strong> High visibility day & night</p>
+          <p><strong>Power:</strong> Energy efficient LEDs</p>
+          <p><strong>Usage:</strong> Indoor & outdoor</p>
+        </div>
+      </div>
+
+      <!-- ACP HOARDING -->
+      <div class="product">
+        <h3>ACP Hoardings</h3>
+        <p>Durable outdoor signage for buildings, highways and large facades.</p>
+        <div class="price">₹1,200 – ₹2,500 / sq ft</div>
+        <a href="contact.html">Enquire now</a>
+
+        <div class="product-faq">
+          <p><strong>Material:</strong> Aluminium composite panels</p>
+          <p><strong>Weather:</strong> UV & rain resistant</p>
+          <p><strong>Usage:</strong> Outdoor branding</p>
+        </div>
+      </div>
+
+      <!-- 3D LETTERS -->
+      <div class="product">
+        <h3>3D Letters</h3>
+        <p>Premium dimensional letters for high-end brand presentation.</p>
+        <div class="price">₹1,500 – ₹4,000 / sq ft</div>
+        <a href="contact.html">Enquire now</a>
+
+        <div class="product-faq">
+          <p><strong>Finish:</strong> Acrylic / SS / Aluminium</p>
+          <p><strong>Lighting:</strong> Optional backlit</p>
+          <p><strong>Usage:</strong> Corporate branding</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>V SIGN</strong>
+      <p style="color:var(--muted)">Premium signage solutions</p>
+    </div>
+    <div>
+      <strong>Explore</strong>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="testimonials.html">Testimonials</a>
+    </div>
+    <div>
+      <strong>Contact</strong>
+      <a href="contact.html">Get in touch</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
