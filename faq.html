@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQs – V SIGN</title>
+<title>Insights – V SIGN</title>
+
 <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -17,120 +17,45 @@
     <div class="nav-links" id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="faq.html">FAQ</a>
+      <a href="gallery.html">Projects</a>
+      <a href="faq.html">Insights</a>
       <a href="contact.html">Contact</a>
-      <button class="btn" onclick="openPlanner()">Plan Budget</button>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </div>
 </header>
 
 <section class="section container">
-  <h1>Frequently Asked Questions</h1>
-  <h2>Clear answers to help you plan your signage confidently</h2>
+  <h1>How Businesses Think About Signage</h1>
+
+  <p>
+    Most businesses approach signage as a cost.
+    Successful businesses treat it as an investment.
+  </p>
+
+  <h3>Why signage matters</h3>
+  <p>
+    Customers form opinions in seconds.
+    Poor signage creates doubt. Clear signage builds trust.
+  </p>
+
+  <h3>How pricing really works</h3>
+  <p>
+    Pricing depends on visibility goals, location,
+    size, and durability — not just materials.
+  </p>
+
+  <h3>Why cheap signage costs more</h3>
+  <p>
+    Frequent replacements, low brightness, and poor finishing
+    damage brand perception over time.
+  </p>
 </section>
 
-<section class="section container">
-  <div class="faq">
+<footer>© V SIGN</footer>
 
-    <details>
-      <summary>How much does signage cost?</summary>
-      <p>
-        Signage pricing depends on the size (width × height), material
-        such as LED, ACP or 3D letters, and installation conditions.
-        You can use our Budget Planner to get an approximate estimate instantly.
-      </p>
-    </details>
-
-    <details>
-      <summary>Is the budget shown on the website final?</summary>
-      <p>
-        No. The budget shown is an approximate range for planning purposes.
-        Final pricing is confirmed after site inspection and design finalisation.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do you provide installation services?</summary>
-      <p>
-        Yes. We provide complete fabrication and professional installation
-        services for all signage projects.
-      </p>
-    </details>
-
-    <details>
-      <summary>Which signage is best for outdoor use?</summary>
-      <p>
-        ACP hoardings and LED sign boards are best suited for outdoor
-        environments due to durability and visibility.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do you handle permissions and approvals?</summary>
-      <p>
-        We guide clients regarding local signage regulations and
-        permission requirements where applicable.
-      </p>
-    </details>
-
-    <details>
-      <summary>Which areas do you serve?</summary>
-      <p>
-        We serve businesses across Andhra Pradesh and Telangana,
-        including Hyderabad, Vijayawada, Vizag, and surrounding regions.
-      </p>
-    </details>
-
-    <details>
-      <summary>How long does a signage project take?</summary>
-      <p>
-        Timelines vary depending on size and complexity.
-        Most standard signage projects are completed within
-        7–14 working days after approval.
-      </p>
-    </details>
-
-  </div>
-</section>
-
-<footer>
-  © V SIGN – Premium Signage Solutions
-</footer>
-
-<div class="floating">
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
-</div>
-
-<!-- BUDGET PLANNER MODAL -->
-<div class="overlay" id="planner">
-  <div class="modal">
-    <h3>Budget Planner</h3>
-    <label>Width (ft)</label>
-    <input type="number" id="w">
-    <label>Height (ft)</label>
-    <input type="number" id="h">
-    <button class="btn" onclick="calc()">Estimate</button>
-    <div class="estimate" id="result"></div>
-    <button class="btn" onclick="closePlanner()">Close</button>
-  </div>
-</div>
-
-<script>
-function toggleMenu(){ menu.classList.toggle("open"); }
-function openPlanner(){ planner.style.display="flex"; }
-function closePlanner(){ planner.style.display="none"; }
-function calc(){
-  let w=document.getElementById("w").value;
-  let h=document.getElementById("h").value;
-  if(w && h){
-    document.getElementById("result").innerText =
-      `₹${w*h*850} – ₹${w*h*1500} approx`;
-  }
-}
-</script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
