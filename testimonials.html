@@ -3,81 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials – V Sign Lights</title>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;color:#0f172a}
-a{text-decoration:none;color:inherit}
-
-/* HEADER */
-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
-.nav{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center}
-nav{display:flex;gap:20px}
-nav a{color:#6b7280;font-weight:600}
-.plan-btn{background:#0b5ed7;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer}
-.hamburger{display:none;font-size:24px;cursor:pointer}
-
-@media(max-width:768px){
-  nav{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px}
-  nav.open{display:flex}
-  .hamburger{display:block}
-}
-
-/* PAGE */
-.section{padding:70px 20px;max-width:1200px;margin:auto;text-align:center}
-h1{font-size:36px;margin-bottom:20px}
-
-/* SLIDER */
-.slider{display:flex;overflow:hidden;position:relative}
-.slide{min-width:100%;transition:0.5s;padding:20px}
-.review{background:#f4f8ff;padding:30px;border-radius:14px;font-size:18px}
-.author{margin-top:10px;font-weight:600;color:#6b7280}
-
-/* FLOATING */
-.floating{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px}
-.floating a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
-.whatsapp{background:#25d366}
-.call{background:#0b5ed7}
-
-/* FOOTER */
-footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
-</style>
+<title>Testimonials – V SIGN</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
+  <div class="container nav">
     <strong>V SIGN</strong>
-    <nav id="menu">
+    <div class="nav-links" id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="gallery.html">Gallery</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <button class="plan-btn" onclick="openPlanner()">Plan Budget</button>
-    </nav>
+      <button class="btn" onclick="openPlanner()">Plan Budget</button>
+    </div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
-<section class="section">
+<section class="section container">
   <h1>What Our Clients Say</h1>
+  <h2>Trusted by businesses across Andhra Pradesh & Telangana</h2>
+</section>
 
-  <div class="slider" id="slider">
-    <div class="slide">
-      <div class="review">★★★★★ Excellent signage quality and professional installation.</div>
-      <div class="author">Retail Store – Hyderabad</div>
+<section class="section container">
+  <div class="slider">
+    <div class="slider-track" id="slider">
+
+      <div class="review">
+        <h3>★★★★★</h3>
+        <p>
+          We got our LED shop board done by V SIGN and the quality
+          exceeded expectations. Bright, clean finish and delivered on time.
+        </p>
+        <p><strong>Retail Store Owner</strong> · Hyderabad</p>
+      </div>
+
+      <div class="review">
+        <h3>★★★★★</h3>
+        <p>
+          Transparent pricing and very professional handling.
+          The ACP hoardings for our building look premium.
+        </p>
+        <p><strong>Builder</strong> · Vijayawada</p>
+      </div>
+
+      <div class="review">
+        <h3>★★★★☆</h3>
+        <p>
+          3D letter signage gave our office a classy look.
+          Installation team knew exactly what they were doing.
+        </p>
+        <p><strong>Corporate Office</strong> · Vizag</p>
+      </div>
+
     </div>
-    <div class="slide">
-      <div class="review">★★★★★ Transparent pricing and timely delivery.</div>
-      <div class="author">Clinic – Vijayawada</div>
-    </div>
-    <div class="slide">
-      <div class="review">★★★★☆ Great ACP hoardings for our building project.</div>
-      <div class="author">Builder – Guntur</div>
-    </div>
+  </div>
+
+  <!-- Manual controls -->
+  <div style="text-align:center;margin-top:20px">
+    <button class="btn" onclick="prev()">←</button>
+    <button class="btn" onclick="next()">→</button>
   </div>
 </section>
 
@@ -90,15 +79,48 @@ footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
   <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
 </div>
 
-<script>
-let index=0;
-setInterval(()=>{
-  index=(index+1)%3;
-  document.getElementById("slider").style.transform=`translateX(-${index*100}%)`;
-},4000);
+<!-- BUDGET PLANNER MODAL -->
+<div class="overlay" id="planner">
+  <div class="modal">
+    <h3>Budget Planner</h3>
+    <label>Width (ft)</label>
+    <input type="number" id="w">
+    <label>Height (ft)</label>
+    <input type="number" id="h">
+    <button class="btn" onclick="calc()">Estimate</button>
+    <div class="estimate" id="result"></div>
+    <button class="btn" onclick="closePlanner()">Close</button>
+  </div>
+</div>
 
-function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
-function openPlanner(){alert("Budget Planner opens from Home / Products")}
+<script>
+let index = 0;
+const slider = document.getElementById("slider");
+const slides = slider.children.length;
+
+function next(){
+  index = (index + 1) % slides;
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function prev(){
+  index = (index - 1 + slides) % slides;
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+setInterval(next, 5000);
+
+function toggleMenu(){ menu.classList.toggle("open"); }
+function openPlanner(){ planner.style.display="flex"; }
+function closePlanner(){ planner.style.display="none"; }
+function calc(){
+  let w=document.getElementById("w").value;
+  let h=document.getElementById("h").value;
+  if(w && h){
+    document.getElementById("result").innerText =
+      `₹${w*h*850} – ₹${w*h*1500} approx`;
+  }
+}
 </script>
 
 </body>
