@@ -4,46 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>V SIGN – Premium Signage Solutions</title>
-<link rel="stylesheet" href="assets/css/style.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 
 <body>
 
 <header>
   <div class="container nav">
     <strong>V SIGN</strong>
+
     <div class="nav-links" id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="gallery.html">Gallery</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <button class="btn" onclick="openPlanner()">Plan Budget</button>
+      <button class="btn" onclick="openPlanner()">
+        <i class="fa-solid fa-calculator"></i> Plan Budget
+      </button>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
     <h1>Premium Signage Solutions</h1>
-    <h2>LED Boards • ACP Hoardings • 3D Letters</h2>
-    <p>Transparent pricing. Professional execution. AP & Telangana.</p>
-    <button class="btn" onclick="openPlanner()">Calculate Budget</button>
+    <h2>LED Boards · ACP Hoardings · 3D Letters</h2>
+    <p>Transparent pricing · Professional execution</p>
+
+    <button class="btn" onclick="openPlanner()">
+      <i class="fa-solid fa-ruler-combined"></i> Calculate Estimate
+    </button>
   </div>
 </section>
 
 <section class="section container">
   <h2>Our Products</h2>
+
   <div class="products">
     <div class="card">
       <img src="assets/images/led.jpg">
       <h3>LED Boards</h3>
-      <p>High-visibility illuminated signage.</p>
+      <p>High visibility illuminated signage</p>
       <div class="card-actions">
         <button class="btn" onclick="openPlanner()">Calculate</button>
         <button class="btn">Enquire</button>
@@ -53,7 +62,7 @@
     <div class="card">
       <img src="assets/images/acp.jpg">
       <h3>ACP Hoardings</h3>
-      <p>Durable outdoor branding solutions.</p>
+      <p>Durable outdoor branding solutions</p>
       <div class="card-actions">
         <button class="btn" onclick="openPlanner()">Calculate</button>
         <button class="btn">Enquire</button>
@@ -63,7 +72,7 @@
     <div class="card">
       <img src="assets/images/3d.jpg">
       <h3>3D Letters</h3>
-      <p>Premium dimensional signage.</p>
+      <p>Premium dimensional signage</p>
       <div class="card-actions">
         <button class="btn" onclick="openPlanner()">Calculate</button>
         <button class="btn">Enquire</button>
@@ -72,67 +81,44 @@
   </div>
 </section>
 
-<section class="section container">
-  <h2>What Our Clients Say</h2>
-  <div class="slider">
-    <div class="slider-track" id="slider">
-      <div class="review">★★★★★ Excellent quality and professional execution.</div>
-      <div class="review">★★★★★ Transparent pricing and timely delivery.</div>
-      <div class="review">★★★★☆ Great signage for our commercial project.</div>
-    </div>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>FAQs</h2>
-  <div class="faq">
-    <details><summary>How much does signage cost?</summary><p>Based on size, material and installation.</p></details>
-    <details><summary>Is the estimate final?</summary><p>No, it is approximate.</p></details>
-    <details><summary>Do you provide installation?</summary><p>Yes, end-to-end service.</p></details>
-  </div>
-</section>
-
 <footer>
   © V SIGN – Premium Signage Solutions
 </footer>
 
 <div class="floating">
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a class="call" href="tel:+91XXXXXXXXXX">
+    <i class="fa-solid fa-phone"></i>
+  </a>
 </div>
 
 <!-- BUDGET PLANNER -->
 <div class="overlay" id="planner">
   <div class="modal">
-    <h3>Budget Planner</h3>
+    <h3><i class="fa-solid fa-calculator"></i> Budget Planner</h3>
+
+    <label>Product Type</label>
+    <select id="product">
+      <option value="led">LED Boards</option>
+      <option value="acp">ACP Hoardings</option>
+      <option value="3d">3D Letters</option>
+    </select>
+
     <label>Width (ft)</label>
     <input type="number" id="w">
+
     <label>Height (ft)</label>
     <input type="number" id="h">
+
     <button class="btn" onclick="calc()">Estimate</button>
     <div class="estimate" id="result"></div>
+
     <button class="btn" onclick="closePlanner()">Close</button>
   </div>
 </div>
 
-<script>
-function toggleMenu(){menu.classList.toggle("open")}
-function openPlanner(){planner.style.display="flex"}
-function closePlanner(){planner.style.display="none"}
-function calc(){
-  let w=document.getElementById("w").value;
-  let h=document.getElementById("h").value;
-  if(w&&h){
-    document.getElementById("result").innerText=
-    `₹${w*h*850} – ₹${w*h*1500} approx`;
-  }
-}
-let i=0;
-setInterval(()=>{
-  i=(i+1)%3;
-  document.getElementById("slider").style.transform=`translateX(-${i*100}%)`;
-},4000);
-</script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
