@@ -1,0 +1,38 @@
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--s4);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+/* Testimonials */
+.testimonial {
+  background: linear-gradient(180deg, #ffffff, #f1f5f9);
+  padding: var(--s3);
+  border-radius: var(--radius);
+}
+
+/* Chatbot */
+.chatbot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 340px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--s3);
+  display: none;
+  z-index: 1000;
+}
