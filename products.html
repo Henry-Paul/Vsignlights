@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Products | V SIGN Signage Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore LED, ACP and 3D signage solutions with instant budget planning and WhatsApp consultation.">
+<meta charset="UTF-8">
+<title>Products | V SIGN Premium Signage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore LED, ACP and 3D signage products with instant budget planning and WhatsApp consultation.">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
 </head>
 
 <body>
@@ -18,131 +20,123 @@
   ========================= -->
   <section>
     <h1>Our Signage Products</h1>
-    <h2>Transparent pricing, practical guidance and professional execution</h2>
-    <h3>Select a product, plan your budget and talk to us instantly</h3>
+    <h2>Built for visibility, durability and business growth</h2>
+    <p>
+      Each product below is designed to solve a specific business need.
+      Plan your budget instantly and speak to our team when ready.
+    </p>
   </section>
 
   <!-- =========================
-       PRODUCT: LED SIGN BOARD
+       PRODUCT GRID (AMAZON STYLE)
   ========================= -->
-  <section class="product-section">
-    <h2>LED Sign Boards</h2>
-    <p>
-      LED sign boards are ideal for businesses that require
-      high visibility during both day and night.
-    </p>
+  <section class="product-grid">
 
-    <!-- Budget Planner -->
-    <div class="calculator">
-      <h3>Plan Your LED Sign Board Budget</h3>
-      <button onclick="selectType('led')">Select LED Sign Board</button>
-      <input id="width" placeholder="Width (ft)">
-      <input id="height" placeholder="Height (ft)">
-      <button onclick="generateEstimate()">Calculate Estimate</button>
-      <p id="result"></p>
-      <button onclick="goWhatsApp()">Contact on WhatsApp</button>
-    </div>
+    <!-- LED -->
+    <div class="card product-card">
+      <img src="assets/images/led.jpg" alt="LED Sign Boards">
 
-    <!-- FAQ -->
-    <div class="faq">
-      <h3>LED Sign Board – FAQ</h3>
-      <p><strong>Is LED signage suitable for outdoor use?</strong><br>
-      Yes, LED boards are weather-resistant and ideal for outdoor visibility.</p>
-
-      <p><strong>How long does an LED board last?</strong><br>
-      With proper maintenance, LED boards last 5–7 years.</p>
-    </div>
-
-    <!-- Testimonial -->
-    <div class="testimonial">
+      <h3>LED Sign Boards</h3>
       <p>
-        “After installing the LED board, our store visibility improved instantly.
-        The budget estimate was accurate and transparent.”
+        Best for retail stores, clinics and showrooms that need
+        maximum visibility during day and night.
       </p>
-      <strong>Retail Store Owner – Hyderabad</strong>
-    </div>
-  </section>
 
-  <!-- =========================
-       PRODUCT: ACP HOARDING
-  ========================= -->
-  <section class="product-section">
-    <h2>ACP Hoardings</h2>
-    <p>
-      ACP hoardings provide long-term branding and are widely used
-      for commercial buildings and showrooms.
-    </p>
+      <ul>
+        <li>✔ High brightness & long life</li>
+        <li>✔ Indoor & outdoor compatible</li>
+        <li>✔ Fast return on investment</li>
+      </ul>
 
-    <!-- Budget Planner -->
-    <div class="calculator">
-      <h3>Plan Your ACP Hoarding Budget</h3>
-      <button onclick="selectType('acp')">Select ACP Hoarding</button>
-      <input id="width" placeholder="Width (ft)">
-      <input id="height" placeholder="Height (ft)">
-      <button onclick="generateEstimate()">Calculate Estimate</button>
-      <p id="result"></p>
-      <button onclick="goWhatsApp()">Contact on WhatsApp</button>
-    </div>
+      <button class="btn" onclick="openChatbot()">Plan LED Budget</button>
 
-    <!-- FAQ -->
-    <div class="faq">
-      <h3>ACP Hoarding – FAQ</h3>
-      <p><strong>Is ACP suitable for large buildings?</strong><br>
-      Yes, ACP panels are lightweight and perfect for large façades.</p>
+      <!-- FAQ -->
+      <div class="card" style="margin-top:24px;">
+        <h4>LED Sign Board – FAQ</h4>
+        <p><strong>How is LED pricing calculated?</strong><br>
+        Pricing depends on size, brightness and installation height.</p>
 
-      <p><strong>Does ACP require frequent maintenance?</strong><br>
-      No, ACP hoardings require minimal maintenance.</p>
+        <p><strong>Is LED suitable for outdoor use?</strong><br>
+        Yes, outdoor-grade LED boards are weather resistant.</p>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="testimonial" style="margin-top:16px;">
+        “Our LED board doubled walk-ins within a week.”
+        <br><strong>Retail Owner – Hyderabad</strong>
+      </div>
     </div>
 
-    <!-- Testimonial -->
-    <div class="testimonial">
+    <!-- ACP -->
+    <div class="card product-card">
+      <img src="assets/images/acp.jpg" alt="ACP Hoardings">
+
+      <h3>ACP Hoardings</h3>
       <p>
-        “The ACP hoarding quality exceeded our expectations.
-        Clear guidance and professional installation.”
+        Ideal for buildings, hospitals and large commercial spaces
+        that need long-term branding.
       </p>
-      <strong>Builder – Vijayawada</strong>
-    </div>
-  </section>
 
-  <!-- =========================
-       PRODUCT: 3D LETTER SIGNAGE
-  ========================= -->
-  <section class="product-section">
-    <h2>3D Letter Signage</h2>
-    <p>
-      3D letters add a premium appearance and are best suited
-      for offices, hospitals and corporate spaces.
-    </p>
+      <ul>
+        <li>✔ Premium finish panels</li>
+        <li>✔ Weather & corrosion resistant</li>
+        <li>✔ Low maintenance</li>
+      </ul>
 
-    <!-- Budget Planner -->
-    <div class="calculator">
-      <h3>Plan Your 3D Letter Signage Budget</h3>
-      <button onclick="selectType('threeD')">Select 3D Letter Signage</button>
-      <input id="width" placeholder="Width (ft)">
-      <input id="height" placeholder="Height (ft)">
-      <button onclick="generateEstimate()">Calculate Estimate</button>
-      <p id="result"></p>
-      <button onclick="goWhatsApp()">Contact on WhatsApp</button>
-    </div>
+      <button class="btn" onclick="openChatbot()">Plan ACP Budget</button>
 
-    <!-- FAQ -->
-    <div class="faq">
-      <h3>3D Letter Signage – FAQ</h3>
-      <p><strong>Is 3D signage suitable for indoor use?</strong><br>
-      Yes, it is perfect for indoor branding and reception areas.</p>
+      <!-- FAQ -->
+      <div class="card" style="margin-top:24px;">
+        <h4>ACP Hoarding – FAQ</h4>
+        <p><strong>Is ACP good for large buildings?</strong><br>
+        Yes, ACP is lightweight and structurally safe.</p>
 
-      <p><strong>What materials are used?</strong><br>
-      Acrylic, stainless steel and aluminum are commonly used.</p>
+        <p><strong>Does ACP fade over time?</strong><br>
+        Quality ACP retains color for many years.</p>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="testimonial" style="margin-top:16px;">
+        “The ACP hoarding gave our building a premium identity.”
+        <br><strong>Builder – Vijayawada</strong>
+      </div>
     </div>
 
-    <!-- Testimonial -->
-    <div class="testimonial">
+    <!-- 3D -->
+    <div class="card product-card">
+      <img src="assets/images/3d.jpg" alt="3D Letter Signage">
+
+      <h3>3D Letter Signage</h3>
       <p>
-        “The 3D lettering gave our office a premium look.
-        Budget planning made decision-making easy.”
+        Premium signage for offices, clinics and corporate brands
+        that want to build trust instantly.
       </p>
-      <strong>Clinic Owner – Guntur</strong>
+
+      <ul>
+        <li>✔ Acrylic & metal options</li>
+        <li>✔ Front-lit / back-lit designs</li>
+        <li>✔ High brand recall</li>
+      </ul>
+
+      <button class="btn" onclick="openChatbot()">Plan 3D Budget</button>
+
+      <!-- FAQ -->
+      <div class="card" style="margin-top:24px;">
+        <h4>3D Letter Signage – FAQ</h4>
+        <p><strong>Is 3D signage suitable indoors?</strong><br>
+        Yes, it is ideal for receptions and interiors.</p>
+
+        <p><strong>Can lighting be customized?</strong><br>
+        Yes, lighting color and intensity are customizable.</p>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="testimonial" style="margin-top:16px;">
+        “Our clinic looks more professional with 3D letters.”
+        <br><strong>Doctor – Guntur</strong>
+      </div>
     </div>
+
   </section>
 
 </main>
@@ -153,7 +147,6 @@
 <div id="chatbot" class="chatbot">
   <h3>Instant Budget Estimator</h3>
 
-  <p>Select Signage Type</p>
   <button onclick="selectType('led')">LED</button>
   <button onclick="selectType('acp')">ACP</button>
   <button onclick="selectType('threeD')">3D Letters</button>
@@ -161,10 +154,12 @@
   <input id="width" placeholder="Width (ft)">
   <input id="height" placeholder="Height (ft)">
 
-  <button onclick="generateEstimate()">Calculate</button>
+  <button class="btn" onclick="generateEstimate()">Calculate Estimate</button>
   <p id="result"></p>
 
-  <button onclick="goWhatsApp()">Contact Now on WhatsApp</button>
+  <button class="btn-outline" onclick="goWhatsApp()">
+    Contact on WhatsApp
+  </button>
 </div>
 
 <!-- =========================
