@@ -2,60 +2,162 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>FAQs | V SIGN Signage Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insights – V SIGN</title>
+<meta name="description" content="Frequently asked questions about LED sign boards, ACP hoardings and 3D letter signage. Transparent answers from V SIGN experts.">
 
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
-    <strong>V SIGN</strong>
-    <div class="nav-links" id="menu">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="gallery.html">Projects</a>
-      <a href="faq.html">Insights</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-  </div>
-</header>
+<main class="container">
 
-<section class="section container">
-  <h1>How Businesses Think About Signage</h1>
+  <!-- =========================
+       PAGE INTRO
+  ========================= -->
+  <section>
+    <h1>Frequently Asked Questions</h1>
+    <h2>Clear answers to help you choose the right signage</h2>
+    <p>
+      Choosing the right signage is an important business decision.
+      Below are answers to the most common questions we receive from
+      business owners across Andhra Pradesh and Telangana.
+    </p>
+  </section>
 
-  <p>
-    Most businesses approach signage as a cost.
-    Successful businesses treat it as an investment.
-  </p>
+  <!-- =========================
+       GENERAL QUESTIONS
+  ========================= -->
+  <section>
+    <h2>General Signage Questions</h2>
 
-  <h3>Why signage matters</h3>
-  <p>
-    Customers form opinions in seconds.
-    Poor signage creates doubt. Clear signage builds trust.
-  </p>
+    <h3>How do I choose the right signage for my business?</h3>
+    <p>
+      The right signage depends on your location, visibility needs,
+      operating hours and brand positioning.
+      For example, LED sign boards work best for retail businesses,
+      while ACP hoardings suit large buildings and long-term branding.
+    </p>
 
-  <h3>How pricing really works</h3>
-  <p>
-    Pricing depends on visibility goals, location,
-    size, and durability — not just materials.
-  </p>
+    <h3>Is the budget shown on the website final?</h3>
+    <p>
+      The budget estimate shown on our website is an approximate range
+      based on size and material.
+      Final pricing is confirmed after a site inspection to ensure
+      accurate installation and safety.
+    </p>
+  </section>
 
-  <h3>Why cheap signage costs more</h3>
-  <p>
-    Frequent replacements, low brightness, and poor finishing
-    damage brand perception over time.
-  </p>
-</section>
+  <!-- =========================
+       LED FAQ
+  ========================= -->
+  <section>
+    <h2>LED Sign Board FAQs</h2>
 
-<footer>© V SIGN</footer>
+    <h3>Are LED sign boards suitable for outdoor use?</h3>
+    <p>
+      Yes. Outdoor LED sign boards are weather-resistant and designed
+      to perform well in rain, heat and dust.
+      They are ideal for shops located on main roads and high-traffic areas.
+    </p>
 
-<script src="assets/js/main.js"></script>
+    <h3>How long does an LED sign board last?</h3>
+    <p>
+      A well-maintained LED sign board typically lasts between 5 to 7 years.
+      Power consumption is low, making it cost-effective in the long run.
+    </p>
+  </section>
+
+  <!-- =========================
+       ACP FAQ
+  ========================= -->
+  <section>
+    <h2>ACP Hoarding FAQs</h2>
+
+    <h3>What is ACP and why is it popular?</h3>
+    <p>
+      ACP (Aluminium Composite Panel) is a lightweight yet durable material
+      widely used for outdoor signage.
+      It offers a clean finish, long lifespan and excellent resistance to weather.
+    </p>
+
+    <h3>Is ACP hoarding suitable for multi-storey buildings?</h3>
+    <p>
+      Yes. ACP is commonly used for commercial buildings,
+      hospitals and showrooms due to its structural safety and premium appearance.
+    </p>
+  </section>
+
+  <!-- =========================
+       3D LETTER FAQ
+  ========================= -->
+  <section>
+    <h2>3D Letter Signage FAQs</h2>
+
+    <h3>Where is 3D letter signage best used?</h3>
+    <p>
+      3D letter signage is ideal for offices, clinics, hospitals and corporate spaces.
+      It creates a premium look and helps build trust with customers.
+    </p>
+
+    <h3>Can 3D signage be customized?</h3>
+    <p>
+      Yes. 3D signage can be customized in terms of material,
+      lighting type, size and color to match your brand identity.
+    </p>
+  </section>
+
+  <!-- =========================
+       PROCESS & SUPPORT
+  ========================= -->
+  <section>
+    <h2>Process & Support</h2>
+
+    <h3>Do you handle installation?</h3>
+    <p>
+      Yes. Our team handles the entire process —
+      design, fabrication, installation and after-sales support.
+    </p>
+
+    <h3>What locations do you serve?</h3>
+    <p>
+      We serve businesses across Andhra Pradesh and Telangana,
+      including major cities and surrounding areas.
+    </p>
+  </section>
+
+</main>
+
+<!-- =========================
+     CHATBOT (GLOBAL)
+========================= -->
+<div id="chatbot" class="chatbot">
+  <h3>Instant Budget Estimator</h3>
+
+  <button onclick="selectType('led')">LED</button>
+  <button onclick="selectType('acp')">ACP</button>
+  <button onclick="selectType('threeD')">3D Letters</button>
+
+  <input id="width" placeholder="Width (ft)">
+  <input id="height" placeholder="Height (ft)">
+
+  <button class="btn" onclick="generateEstimate()">Calculate</button>
+  <p id="result"></p>
+
+  <button class="btn-outline" onclick="goWhatsApp()">
+    Contact on WhatsApp
+  </button>
+</div>
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/estimator.js"></script>
+<script src="assets/js/chatbot.js"></script>
+
 </body>
 </html>
