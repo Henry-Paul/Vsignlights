@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>V SIGN – Premium Signage Solutions</title>
+<title>V SIGN – Business Signage Solutions</title>
 
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -15,106 +15,149 @@
 <header>
   <div class="container nav">
     <strong>V SIGN</strong>
-
     <div class="nav-links" id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="faq.html">FAQ</a>
+      <a href="gallery.html">Projects</a>
+      <a href="faq.html">Insights</a>
       <a href="contact.html">Contact</a>
       <button class="btn" onclick="openPlanner()">
         <i class="fa-solid fa-calculator"></i> Plan Budget
       </button>
     </div>
-
     <div class="hamburger" onclick="toggleMenu()">
       <i class="fa-solid fa-bars"></i>
     </div>
   </div>
 </header>
 
+<!-- EXECUTIVE HERO -->
 <section class="hero">
   <div class="container">
-    <h1>Premium Signage Solutions</h1>
-    <h2>LED Boards · ACP Hoardings · 3D Letters</h2>
-    <p>Transparent pricing · Professional execution</p>
-
+    <h1>Signage that builds visibility, trust, and revenue</h1>
+    <h2>
+      Businesses don’t fail because of products —  
+      they fail because customers don’t notice them.
+    </h2>
+    <p>
+      V SIGN helps businesses across AP & Telangana create
+      strong first impressions using professional signage solutions.
+    </p>
     <button class="btn" onclick="openPlanner()">
-      <i class="fa-solid fa-ruler-combined"></i> Calculate Estimate
+      <i class="fa-solid fa-ruler-combined"></i> Estimate Your Signage Cost
     </button>
   </div>
 </section>
 
+<!-- PRODUCT STRATEGY SLIDER -->
 <section class="section container">
-  <h2>Our Products</h2>
+  <h2>Our Signage Solutions</h2>
+  <p>
+    Each solution is designed to solve a specific business problem —
+    visibility, trust, or brand recall.
+  </p>
+
+  <div class="slider">
+    <div class="slider-track" id="productSlider">
+
+      <div class="card">
+        <h3>LED Sign Boards</h3>
+        <p>
+          Ideal for businesses that depend on walk-in customers.
+          Bright, visible day and night, proven to increase footfall.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>ACP Hoardings</h3>
+        <p>
+          Best for long-term outdoor branding.
+          Builds authority and professionalism for commercial spaces.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>3D Letter Signage</h3>
+        <p>
+          Premium branding for offices and showrooms.
+          Signals trust, stability, and brand maturity.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST: TESTIMONIAL + FAQ STORY -->
+<section class="section container">
+  <h2>Why Businesses Choose V SIGN</h2>
 
   <div class="products">
     <div class="card">
-      <img src="assets/images/led.jpg">
-      <h3>LED Boards</h3>
-      <p>High visibility illuminated signage</p>
-      <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">Calculate</button>
-        <button class="btn">Enquire</button>
-      </div>
+      <p>
+        “We saw a noticeable increase in walk-ins within weeks
+        of installing our LED signage.”
+      </p>
+      <strong>Retail Client · Hyderabad</strong>
+      <p class="muted">
+        Why this matters: Visibility directly impacts revenue.
+      </p>
     </div>
 
     <div class="card">
-      <img src="assets/images/acp.jpg">
-      <h3>ACP Hoardings</h3>
-      <p>Durable outdoor branding solutions</p>
-      <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">Calculate</button>
-        <button class="btn">Enquire</button>
-      </div>
+      <p>
+        “Clear pricing and professional execution —
+        no surprises.”
+      </p>
+      <strong>Builder · Vijayawada</strong>
+      <p class="muted">
+        Why this matters: Businesses need predictability.
+      </p>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <img src="assets/images/3d.jpg">
-      <h3>3D Letters</h3>
-      <p>Premium dimensional signage</p>
-      <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">Calculate</button>
-        <button class="btn">Enquire</button>
-      </div>
+<!-- PROJECTS SLIDER (OPPOSITE DIRECTION) -->
+<section class="section container">
+  <h2>Real Projects Delivered</h2>
+
+  <div class="slider">
+    <div class="slider-track reverse" id="projectSlider">
+      <div class="card">Retail LED Board · Hyderabad</div>
+      <div class="card">ACP Hoarding · Commercial Complex</div>
+      <div class="card">3D Letters · Corporate Office</div>
     </div>
   </div>
 </section>
 
 <footer>
-  © V SIGN – Premium Signage Solutions
+  © V SIGN – Business Signage Solutions
 </footer>
 
+<!-- FLOATING CTA -->
 <div class="floating">
   <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">
-    <i class="fa-brands fa-whatsapp"></i>
+    <i class="fa-brands fa-whatsapp"></i><span class="hint">WhatsApp</span>
   </a>
   <a class="call" href="tel:+91XXXXXXXXXX">
-    <i class="fa-solid fa-phone"></i>
+    <i class="fa-solid fa-phone"></i><span class="hint">Call</span>
   </a>
 </div>
 
-<!-- BUDGET PLANNER -->
+<!-- PLANNER (same everywhere) -->
 <div class="overlay" id="planner">
   <div class="modal">
-    <h3><i class="fa-solid fa-calculator"></i> Budget Planner</h3>
-
-    <label>Product Type</label>
+    <h3>Budget Planner</h3>
+    <label>Product</label>
     <select id="product">
       <option value="led">LED Boards</option>
       <option value="acp">ACP Hoardings</option>
       <option value="3d">3D Letters</option>
     </select>
-
-    <label>Width (ft)</label>
-    <input type="number" id="w">
-
-    <label>Height (ft)</label>
-    <input type="number" id="h">
-
+    <label>Width (ft)</label><input id="w" type="number">
+    <label>Height (ft)</label><input id="h" type="number">
     <button class="btn" onclick="calc()">Estimate</button>
     <div class="estimate" id="result"></div>
-
     <button class="btn" onclick="closePlanner()">Close</button>
   </div>
 </div>
