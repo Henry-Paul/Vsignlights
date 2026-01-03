@@ -1,0 +1,94 @@
+:root{
+  --brand:#2563eb;
+  --brand-soft:#eef2ff;
+  --border:#e5e7eb;
+  --container:1200px;
+  --gap:24px;
+}
+
+/* ===== Containers ===== */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ===== Header ===== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.nav a{
+  margin-left: 16px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* ===== Hero ===== */
+.hero{
+  background: linear-gradient(180deg, #ffffff, var(--brand-soft));
+  border-bottom: 1px solid var(--border);
+}
+
+.hero .container{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* ===== Footer ===== */
+.site-footer{
+  border-top: 1px solid var(--border);
+  background:#fafafa;
+}
+
+.footer-inner{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 24px;
+  font-size: 0.9rem;
+  color:#6b7280;
+}
+
+/* ===== Utilities ===== */
+.grid{
+  display: grid;
+  gap: var(--gap);
+}
+
+.grid-3{
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:6px;
+  background: var(--brand);
+  color:#fff;
+  border:0;
+  cursor:pointer;
+}
+
+.btn-outline{
+  background:#fff;
+  color: var(--brand);
+  border:1px solid var(--brand);
+}
