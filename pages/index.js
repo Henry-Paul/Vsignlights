@@ -1,3 +1,6 @@
+import { useState } from "react";
+import BudgetModal from "../components/BudgetModal";
+import BudgetPlanner from "../components/BudgetPlanner";
 import Header from "../components/Header";
 import ProductSlider from "../components/ProductSlider";
 import TestimonialSlider from "../components/TestimonialSlider";
