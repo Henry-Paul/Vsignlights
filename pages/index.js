@@ -6,18 +6,28 @@ export default function Home() {
     <Layout>
 
       <section className="hero">
-        <div className="container">
-          <h1>Premium Signage Solutions</h1>
-          <h2>LED, ACP & 3D signage with transparent pricing</h2>
-          <h3>Serving Andhra Pradesh & Telangana</h3>
+        <h1>Premium Signage Solutions</h1>
+        <h2>LED • ACP • 3D Letters</h2>
+        <button>💰 Calculate Budget</button>
+      </section>
+
+      <section className="section">
+        <h2>Our Products</h2>
+        <div className="product-slider">
+          {["LED Boards", "ACP Hoardings", "3D Letters"].map(p => (
+            <div key={p} className="card">
+              <img src="/placeholder.jpg" />
+              <h3>{p}</h3>
+              <p>High quality signage solution</p>
+              <button>Calculate Estimate</button>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <h2>Frequently Asked Questions</h2>
-          <FAQAccordion />
-        </div>
+        <h2>FAQs</h2>
+        <FAQAccordion />
       </section>
 
     </Layout>
