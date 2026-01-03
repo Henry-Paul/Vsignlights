@@ -1,83 +1,61 @@
 import { useState } from "react";
 
 const PRODUCTS = {
-  led: { label: "LED Shop Board", min: 850, max: 1500 },
-  acp: { label: "ACP Hoarding", min: 1200, max: 2500 },
-  letters: { label: "3D Letters", min: 1500, max: 4000 }
+  LED: [850, 1500],
+  ACP: [1200, 2500],
+  "3D Letters": [1500, 4000],
 };
 
-const CITIES = {
-  tier1: { label: "Hyderabad", multiplier: 1.1 },
-  tier2: { label: "Vijayawada / Vizag", multiplier: 1.05 },
-  tier3: { label: "Other cities", multiplier: 1.0 }
+const CITY_MULTIPLIER = {
+  Hyderabad: 1.1,
+  "Tier 2 City": 1.05,
+  Others: 1,
 };
 
 export default function BudgetPlanner() {
-  const [product, setProduct] = useState("led");
+  const [product, setProduct] = useState("LED");
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
-  const [city, setCity] = useState("tier1");
+  const [city, setCity] = useState("Hyderabad");
 
   const area = width && height ? width * height : 0;
 
   let estimate = null;
   if (area > 0) {
-    const p = PRODUCTS[product];
-    const m = CITIES[city].multiplier;
-
+    const [min, max] = PRODUCTS[product];
+    const m = CITY_MULTIPLIER[city];
     estimate = {
-      min: Math.round(area * p.min * m),
-      max: Math.round(area * p.max * m)
+      min: Math.round(area * min * m),
+      max: Math.round(area * max * m),
     };
   }
 
   return (
-    <div>
-      <h2>Plan Your Signage Budget</h2>
-      <p style={{ color: "var(--muted)", marginBottom: "20px" }}>
-        Approximate estimate based on real-world pricing.
-      </p>
+    <>
+      <h2>Budget Planner</h2>
 
       <label>Product</label>
-      <select onChange={(e) => setProduct(e.target.value)} style={input}>
-        <option value="led">LED Shop Board</option>
-        <option value="acp">ACP Hoarding</option>
-        <option value="letters">3D Letters</option>
+      <select onChange={(e) => setProduct(e.target.value)}>
+        {Object.keys(PRODUCTS).map(p => <option key={p}>{p}</option>)}
       </select>
 
       <label>Width (ft)</label>
-      <input type="number" onChange={(e) => setWidth(e.target.value)} style={input} />
+      <input type="number" onChange={(e) => setWidth(e.target.value)} />
 
       <label>Height (ft)</label>
-      <input type="number" onChange={(e) => setHeight(e.target.value)} style={input} />
+      <input type="number" onChange={(e) => setHeight(e.target.value)} />
 
       <label>City</label>
-      <select onChange={(e) => setCity(e.target.value)} style={input}>
-        <option value="tier1">Hyderabad</option>
-        <option value="tier2">Vijayawada / Vizag</option>
-        <option value="tier3">Other cities</option>
+      <select onChange={(e) => setCity(e.target.value)}>
+        {Object.keys(CITY_MULTIPLIER).map(c => <option key={c}>{c}</option>)}
       </select>
 
       {estimate && (
-        <div style={{ marginTop: "24px", padding: "18px", background: "#F4F8FF", borderRadius: "12px" }}>
-          <strong>Estimated Budget</strong>
-          <p style={{ fontSize: "20px", marginTop: "8px", color: "var(--primary)" }}>
-            ₹{estimate.min.toLocaleString()} – ₹{estimate.max.toLocaleString()}
-          </p>
-          <p style={{ fontSize: "13px", color: "var(--muted)" }}>
-            Final price may vary after site inspection.
-          </p>
+        <div className="estimate">
+          ₹{estimate.min.toLocaleString()} – ₹{estimate.max.toLocaleString()}
+          <p>Approximate estimate. Final price after site visit.</p>
         </div>
       )}
-    </div>
+    </>
   );
 }
-
-const input = {
-  width: "100%",
-  marginTop: "6px",
-  marginBottom: "14px",
-  padding: "12px",
-  borderRadius: "8px",
-  border: "1px solid #e5e7eb"
-};
