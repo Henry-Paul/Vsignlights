@@ -1,267 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products – V SIGN Premium Signage</title>
-
-<meta name="description" content="Explore premium signage products including LED boards, ACP hoardings and 3D letters. Transparent pricing, professional installation, and trusted quality.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Products – V Sign Lights</title>
 
 <style>
-:root{
-  --blue:#0B5ED7;
-  --light:#F4F8FF;
-  --text:#0F172A;
-  --muted:#6B7280;
-  --border:#E5E7EB;
+/* ===== RESET ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#0f172a;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
+.nav{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center}
+nav{display:flex;gap:20px}
+nav a{color:#6b7280;font-weight:600}
+.plan-btn{background:#0b5ed7;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer}
+.hamburger{display:none;font-size:24px;cursor:pointer}
+
+@media(max-width:768px){
+  nav{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px}
+  nav.open{display:flex}
+  .hamburger{display:block}
 }
 
-*{box-sizing:border-box}
+/* ===== PAGE ===== */
+.section{padding:70px 20px;max-width:1200px;margin:auto}
+h1{text-align:center;font-size:36px}
+h2{margin-bottom:20px}
 
-body{
-  margin:0;
-  font-family:Inter,system-ui;
-  color:var(--text);
-  background:#fff;
-}
+/* ===== PRODUCT GRID ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{border:1px solid #e5e7eb;border-radius:14px;padding:16px}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.card h3{margin-top:12px}
+.card p{margin-top:8px;color:#6b7280}
+.actions{margin-top:12px;display:flex;gap:10px}
+.actions button{flex:1}
 
-/* HEADER */
-header{
-  border-bottom:1px solid var(--border);
-  background:#fff;
-}
-.header-wrap{
-  max-width:1200px;
-  margin:auto;
-  padding:18px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:500;
-}
-nav a:hover{color:var(--blue);}
+/* ===== FAQ ===== */
+.faq{margin-top:30px}
+.faq details{border-bottom:1px solid #e5e7eb;padding:14px 0}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{margin-top:8px;color:#6b7280}
 
-/* HERO */
-.hero{
-  background:linear-gradient(180deg,#F4F8FF,white);
-  padding:80px 24px;
-}
-.hero-wrap{
-  max-width:1200px;
-  margin:auto;
-}
-.hero h1{
-  font-size:44px;
-  font-weight:700;
-}
-.hero h2{
-  margin-top:14px;
-  font-size:22px;
-  color:var(--muted);
-  max-width:800px;
-}
-.hero h3{
-  margin-top:24px;
-  font-size:15px;
-  color:var(--muted);
-}
+/* ===== MODAL ===== */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center}
+.modal{background:#fff;padding:24px;border-radius:14px;width:90%;max-width:420px}
 
-/* SECTION */
-.section{
-  padding:70px 24px;
-}
-.wrap{
-  max-width:1200px;
-  margin:auto;
-}
-.section h2{
-  font-size:32px;
-  font-weight:600;
-}
-.section p{
-  margin-top:10px;
-  color:var(--muted);
-  max-width:760px;
-}
+/* ===== FLOATING ===== */
+.floating{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px}
+.floating a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
+.whatsapp{background:#25d366}
+.call{background:#0b5ed7}
 
-/* PRODUCT GRID */
-.products{
-  margin-top:40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:28px;
-}
-.product{
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:26px;
-  transition:.2s ease;
-}
-.product:hover{
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-.product h3{
-  margin:0;
-  font-size:20px;
-}
-.product p{
-  margin-top:10px;
-  font-size:14px;
-  color:var(--muted);
-}
-.price{
-  margin-top:16px;
-  font-weight:700;
-  color:var(--blue);
-}
-.product a{
-  display:inline-block;
-  margin-top:18px;
-  padding:10px 18px;
-  border:1px solid var(--blue);
-  border-radius:8px;
-  text-decoration:none;
-  color:var(--blue);
-  font-weight:600;
-}
-.product a:hover{
-  background:var(--blue);
-  color:#fff;
-}
-
-/* PRODUCT FAQ */
-.product-faq{
-  margin-top:24px;
-  border-top:1px solid var(--border);
-  padding-top:16px;
-}
-.product-faq p{
-  font-size:13px;
-  margin:6px 0;
-}
-
-/* FOOTER */
-footer{
-  border-top:1px solid var(--border);
-  padding:40px 24px;
-  background:#F9FAFB;
-}
-footer .wrap{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:24px;
-  font-size:14px;
-}
-footer a{
-  display:block;
-  margin-top:6px;
-  text-decoration:none;
-  color:var(--muted);
-}
+/* ===== FOOTER ===== */
+footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-wrap">
+  <div class="nav">
     <strong>V SIGN</strong>
-    <nav>
+    <nav id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="blogs.html">Blogs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
+      <button class="plan-btn" onclick="openPlanner()">Plan Budget</button>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-wrap">
-    <h1>Signage products</h1>
-    <h2>Professionally engineered signage solutions designed for visibility, durability and brand impact.</h2>
-    <h3>Transparent pricing · Expert installation · Trusted quality</h3>
-  </div>
-</section>
-
 <section class="section">
-  <div class="wrap">
-    <h2>Our product range</h2>
-    <p>Each product is manufactured using premium materials and installed by experienced professionals.</p>
+  <h1>Our Signage Products</h1>
 
-    <div class="products">
+  <div class="grid">
 
-      <!-- LED SHOP BOARD -->
-      <div class="product">
-        <h3>LED Shop Boards</h3>
-        <p>Illuminated signage ideal for retail storefronts, clinics and showrooms.</p>
-        <div class="price">₹850 – ₹1,500 / sq ft</div>
-        <a href="contact.html">Enquire now</a>
-
-        <div class="product-faq">
-          <p><strong>Brightness:</strong> High visibility day & night</p>
-          <p><strong>Power:</strong> Energy efficient LEDs</p>
-          <p><strong>Usage:</strong> Indoor & outdoor</p>
-        </div>
+    <!-- LED -->
+    <div class="card">
+      <img src="assets/images/led.jpg">
+      <h3>LED Boards</h3>
+      <p>High-visibility illuminated signage for shops & showrooms.</p>
+      <div class="actions">
+        <button onclick="openPlanner()">Calculate</button>
+        <button>Enquire Now</button>
       </div>
-
-      <!-- ACP HOARDING -->
-      <div class="product">
-        <h3>ACP Hoardings</h3>
-        <p>Durable outdoor signage for buildings, highways and large facades.</p>
-        <div class="price">₹1,200 – ₹2,500 / sq ft</div>
-        <a href="contact.html">Enquire now</a>
-
-        <div class="product-faq">
-          <p><strong>Material:</strong> Aluminium composite panels</p>
-          <p><strong>Weather:</strong> UV & rain resistant</p>
-          <p><strong>Usage:</strong> Outdoor branding</p>
-        </div>
-      </div>
-
-      <!-- 3D LETTERS -->
-      <div class="product">
-        <h3>3D Letters</h3>
-        <p>Premium dimensional letters for high-end brand presentation.</p>
-        <div class="price">₹1,500 – ₹4,000 / sq ft</div>
-        <a href="contact.html">Enquire now</a>
-
-        <div class="product-faq">
-          <p><strong>Finish:</strong> Acrylic / SS / Aluminium</p>
-          <p><strong>Lighting:</strong> Optional backlit</p>
-          <p><strong>Usage:</strong> Corporate branding</p>
-        </div>
-      </div>
-
     </div>
+
+    <!-- ACP -->
+    <div class="card">
+      <img src="assets/images/acp.jpg">
+      <h3>ACP Hoardings</h3>
+      <p>Durable outdoor branding for buildings and highways.</p>
+      <div class="actions">
+        <button onclick="openPlanner()">Calculate</button>
+        <button>Enquire Now</button>
+      </div>
+    </div>
+
+    <!-- 3D -->
+    <div class="card">
+      <img src="assets/images/3d.jpg">
+      <h3>3D Letters</h3>
+      <p>Premium dimensional signage for brand identity.</p>
+      <div class="actions">
+        <button onclick="openPlanner()">Calculate</button>
+        <button>Enquire Now</button>
+      </div>
+    </div>
+
   </div>
+
+  <div class="faq">
+    <h2>Product FAQs</h2>
+    <details><summary>How is pricing calculated?</summary><p>Based on size, material, lighting and installation.</p></details>
+    <details><summary>Is installation included?</summary><p>Installation is handled after site inspection.</p></details>
+    <details><summary>Which product is best for outdoor use?</summary><p>ACP Hoardings and LED Boards.</p></details>
+  </div>
+
 </section>
 
 <footer>
-  <div class="wrap">
-    <div>
-      <strong>V SIGN</strong>
-      <p style="color:var(--muted)">Premium signage solutions</p>
-    </div>
-    <div>
-      <strong>Explore</strong>
-      <a href="products.html">Products</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="testimonials.html">Testimonials</a>
-    </div>
-    <div>
-      <strong>Contact</strong>
-      <a href="contact.html">Get in touch</a>
-    </div>
-  </div>
+  © V SIGN – Premium Signage Solutions
 </footer>
+
+<div class="floating">
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
+  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
+</div>
+
+<!-- BUDGET PLANNER -->
+<div class="overlay" id="planner">
+  <div class="modal">
+    <h3>Budget Planner</h3>
+    <label>Width (ft)</label>
+    <input type="number" id="w">
+    <label>Height (ft)</label>
+    <input type="number" id="h">
+    <button onclick="calculate()">Estimate</button>
+    <p id="result"></p>
+    <button onclick="closePlanner()">Close</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
+function openPlanner(){document.getElementById("planner").style.display="flex"}
+function closePlanner(){document.getElementById("planner").style.display="none"}
+function calculate(){
+  let w=document.getElementById("w").value;
+  let h=document.getElementById("h").value;
+  if(w&&h){
+    let min=w*h*850,max=w*h*1500;
+    document.getElementById("result").innerText=`₹${min} – ₹${max} approx`;
+  }
+}
+</script>
 
 </body>
 </html>
