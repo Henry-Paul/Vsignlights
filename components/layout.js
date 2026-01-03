@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Footer from "./Footer";
 import BudgetPlanner from "./BudgetPlanner";
 import FloatingActions from "./FloatingActions";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
-  const [menu, setMenu] = useState(false);
-  const [planner, setPlanner] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [plannerOpen, setPlannerOpen] = useState(false);
 
   return (
     <>
@@ -14,26 +14,28 @@ export default function Layout({ children }) {
         <div className="nav">
           <strong>V SIGN</strong>
 
-          <nav className={menu ? "open" : ""}>
+          <nav className={menuOpen ? "open" : ""}>
             <a href="/">Home</a>
             <a href="/products">Products</a>
             <a href="/blogs">Blogs</a>
             <a href="/testimonials">Testimonials</a>
             <a href="/contact">Contact</a>
-            <button className="plan-btn" onClick={() => setPlanner(true)}>
-              Plan Budget
+            <button className="plan-btn" onClick={() => setPlannerOpen(true)}>
+              💰 Plan Budget
             </button>
           </nav>
 
-          <div className="hamburger" onClick={() => setMenu(!menu)}>☰</div>
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
+          </div>
         </div>
       </header>
 
       <main>{children}</main>
 
-      {/* BUDGET PLANNER */}
-      {planner && (
-        <div className="overlay" onClick={() => setPlanner(false)}>
+      {/* GLOBAL BUDGET PLANNER */}
+      {plannerOpen && (
+        <div className="overlay" onClick={() => setPlannerOpen(false)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <BudgetPlanner />
           </div>
