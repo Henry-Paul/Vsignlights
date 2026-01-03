@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products – V SIGN</title>
-<link rel="stylesheet" href="assets/css/style.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -21,95 +20,50 @@
       <a href="gallery.html">Gallery</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <button class="btn" onclick="openPlanner()">Plan Budget</button>
+      <button class="btn" onclick="openPlanner()">
+        <i class="fa-solid fa-calculator"></i> Plan Budget
+      </button>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </div>
 </header>
 
 <section class="section container">
   <h1>Our Signage Products</h1>
-  <h2>Designed for visibility, durability and brand impact</h2>
-</section>
+  <h2>Designed for visibility and brand impact</h2>
 
-<section class="section container">
   <div class="products">
-
-    <!-- LED -->
     <div class="card">
-      <img src="assets/images/led.jpg" alt="LED Sign Boards">
+      <img src="assets/images/led.jpg">
       <h3>LED Sign Boards</h3>
-      <p>
-        High-visibility illuminated signage ideal for shops,
-        clinics and showrooms.
-      </p>
+      <p>Best for shops, clinics and showrooms</p>
       <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">Calculate Estimate</button>
-        <button class="btn">Enquire Now</button>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Is LED suitable for outdoor use?</summary>
-          <p>Yes. LED boards are weather-resistant and highly visible at night.</p>
-        </details>
-        <details>
-          <summary>How is LED pricing calculated?</summary>
-          <p>Based on size (sq ft), brightness, material and installation.</p>
-        </details>
+        <button class="btn" onclick="openPlanner()">Calculate</button>
+        <button class="btn">Enquire</button>
       </div>
     </div>
 
-    <!-- ACP -->
     <div class="card">
-      <img src="assets/images/acp.jpg" alt="ACP Hoardings">
+      <img src="assets/images/acp.jpg">
       <h3>ACP Hoardings</h3>
-      <p>
-        Strong aluminium composite panels for outdoor branding
-        and building signage.
-      </p>
+      <p>Strong and weather-resistant signage</p>
       <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">Calculate Estimate</button>
-        <button class="btn">Enquire Now</button>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Is ACP durable?</summary>
-          <p>Yes. ACP is ideal for long-term outdoor applications.</p>
-        </details>
-        <details>
-          <summary>Does ACP require maintenance?</summary>
-          <p>Very minimal maintenance compared to other materials.</p>
-        </details>
+        <button class="btn" onclick="openPlanner()">Calculate</button>
+        <button class="btn">Enquire</button>
       </div>
     </div>
 
-    <!-- 3D -->
     <div class="card">
-      <img src="assets/images/3d.jpg" alt="3D Letter Signage">
-      <h3>3D Letter Signage</h3>
-      <p>
-        Premium dimensional letters that enhance brand
-        perception and visibility.
-      </p>
+      <img src="assets/images/3d.jpg">
+      <h3>3D Letters</h3>
+      <p>Premium brand identity signage</p>
       <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">Calculate Estimate</button>
-        <button class="btn">Enquire Now</button>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary>Which materials are used?</summary>
-          <p>Acrylic, stainless steel and aluminium based on requirement.</p>
-        </details>
-        <details>
-          <summary>Are 3D letters illuminated?</summary>
-          <p>They can be non-lit or LED-backlit depending on design.</p>
-        </details>
+        <button class="btn" onclick="openPlanner()">Calculate</button>
+        <button class="btn">Enquire</button>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -118,37 +72,28 @@
 </footer>
 
 <div class="floating">
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX"><i class="fa-brands fa-whatsapp"></i></a>
+  <a class="call" href="tel:+91XXXXXXXXXX"><i class="fa-solid fa-phone"></i></a>
 </div>
 
-<!-- BUDGET PLANNER MODAL -->
+<!-- SAME PLANNER -->
 <div class="overlay" id="planner">
   <div class="modal">
     <h3>Budget Planner</h3>
-    <label>Width (ft)</label>
-    <input type="number" id="w">
-    <label>Height (ft)</label>
-    <input type="number" id="h">
+    <label>Product</label>
+    <select id="product">
+      <option value="led">LED</option>
+      <option value="acp">ACP</option>
+      <option value="3d">3D Letters</option>
+    </select>
+    <label>Width</label><input id="w" type="number">
+    <label>Height</label><input id="h" type="number">
     <button class="btn" onclick="calc()">Estimate</button>
     <div class="estimate" id="result"></div>
     <button class="btn" onclick="closePlanner()">Close</button>
   </div>
 </div>
 
-<script>
-function toggleMenu(){menu.classList.toggle("open")}
-function openPlanner(){planner.style.display="flex"}
-function closePlanner(){planner.style.display="none"}
-function calc(){
-  let w=document.getElementById("w").value;
-  let h=document.getElementById("h").value;
-  if(w && h){
-    document.getElementById("result").innerText =
-      `₹${w*h*850} – ₹${w*h*1500} approx`;
-  }
-}
-</script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
