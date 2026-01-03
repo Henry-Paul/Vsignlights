@@ -1,58 +1,38 @@
 import { useState } from "react";
 
-const PRODUCTS = {
+const DATA = {
   LED: [850, 1500],
   ACP: [1200, 2500],
   "3D Letters": [1500, 4000],
 };
 
-const CITY_MULTIPLIER = {
-  Hyderabad: 1.1,
-  "Tier 2 City": 1.05,
-  Others: 1,
-};
-
 export default function BudgetPlanner() {
-  const [product, setProduct] = useState("LED");
-  const [width, setWidth] = useState("");
-  const [height, setHeight] = useState("");
-  const [city, setCity] = useState("Hyderabad");
+  const [type, setType] = useState("LED");
+  const [w, setW] = useState("");
+  const [h, setH] = useState("");
 
-  const area = width && height ? width * height : 0;
-
-  let estimate = null;
-  if (area > 0) {
-    const [min, max] = PRODUCTS[product];
-    const m = CITY_MULTIPLIER[city];
-    estimate = {
-      min: Math.round(area * min * m),
-      max: Math.round(area * max * m),
-    };
-  }
+  const area = w && h ? w * h : 0;
+  const min = area ? area * DATA[type][0] : 0;
+  const max = area ? area * DATA[type][1] : 0;
 
   return (
     <>
       <h2>Budget Planner</h2>
 
       <label>Product</label>
-      <select onChange={(e) => setProduct(e.target.value)}>
-        {Object.keys(PRODUCTS).map(p => <option key={p}>{p}</option>)}
+      <select onChange={(e) => setType(e.target.value)}>
+        {Object.keys(DATA).map(p => <option key={p}>{p}</option>)}
       </select>
 
       <label>Width (ft)</label>
-      <input type="number" onChange={(e) => setWidth(e.target.value)} />
+      <input type="number" onChange={(e) => setW(e.target.value)} />
 
       <label>Height (ft)</label>
-      <input type="number" onChange={(e) => setHeight(e.target.value)} />
+      <input type="number" onChange={(e) => setH(e.target.value)} />
 
-      <label>City</label>
-      <select onChange={(e) => setCity(e.target.value)}>
-        {Object.keys(CITY_MULTIPLIER).map(c => <option key={c}>{c}</option>)}
-      </select>
-
-      {estimate && (
+      {area > 0 && (
         <div className="estimate">
-          ₹{estimate.min.toLocaleString()} – ₹{estimate.max.toLocaleString()}
+          ₹{min.toLocaleString()} – ₹{max.toLocaleString()}
           <p>Approximate estimate. Final price after site visit.</p>
         </div>
       )}
