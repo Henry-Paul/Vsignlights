@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects | V SIGN Signage Work</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore real signage projects delivered by V SIGN across Andhra Pradesh and Telangana.">
+<meta charset="UTF-8">
+<title>Projects | V SIGN Signage Installations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Real signage projects delivered by V SIGN across Andhra Pradesh and Telangana.">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
 </head>
 
 <body>
@@ -18,8 +20,11 @@
   ========================= -->
   <section>
     <h1>Our Signage Projects</h1>
-    <h2>Real installations delivered for real businesses</h2>
-    <h3>Projects segmented by signage type</h3>
+    <h2>Real installations for real businesses</h2>
+    <p>
+      Each project below represents a real-world signage solution
+      delivered for visibility, durability, and brand trust.
+    </p>
   </section>
 
   <!-- =========================
@@ -28,29 +33,36 @@
   <section>
     <h2>LED Sign Board Projects</h2>
 
-    <!-- Project Card -->
-    <div class="project-card">
-      <button class="video-btn" onclick="toggleVideo(this)">▶ Video</button>
+    <div class="product-grid">
 
-      <div class="slider">
-        <img src="assets/images/led1.jpg">
-        <img src="assets/images/led2.jpg">
-        <img src="assets/images/led3.jpg">
+      <!-- Project Card -->
+      <div class="card project-card">
+        <button class="video-btn" onclick="toggleVideo(this)">Video</button>
+
+        <div class="image-strip">
+          <img src="assets/images/led1.jpg" alt="">
+          <img src="assets/images/led2.jpg" alt="">
+          <img src="assets/images/led3.jpg" alt="">
+        </div>
+
+        <h3>Retail Store – Hyderabad</h3>
+        <p>
+          High-brightness LED signage installed on a high-traffic road
+          to increase walk-in customers during both day and night.
+        </p>
+
+        <video class="project-video" controls>
+          <source src="assets/videos/led.mp4" type="video/mp4">
+        </video>
       </div>
 
-      <h3>Retail Store – Hyderabad</h3>
-      <p>High-brightness LED sign board for maximum street visibility.</p>
+      <!-- Repeat structure for 4 more projects -->
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
 
-      <video class="project-video" controls>
-        <source src="assets/videos/led.mp4" type="video/mp4">
-      </video>
     </div>
-
-    <!-- Duplicate 4 more projects -->
-    <div class="project-card">… (repeat with other images)</div>
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
   </section>
 
   <!-- =========================
@@ -59,27 +71,34 @@
   <section>
     <h2>ACP Hoarding Projects</h2>
 
-    <div class="project-card">
-      <button class="video-btn" onclick="toggleVideo(this)">▶ Video</button>
+    <div class="product-grid">
 
-      <div class="slider">
-        <img src="assets/images/acp1.jpg">
-        <img src="assets/images/acp2.jpg">
-        <img src="assets/images/acp3.jpg">
+      <div class="card project-card">
+        <button class="video-btn" onclick="toggleVideo(this)">Video</button>
+
+        <div class="image-strip">
+          <img src="assets/images/acp1.jpg">
+          <img src="assets/images/acp2.jpg">
+          <img src="assets/images/acp3.jpg">
+        </div>
+
+        <h3>Commercial Building – Vijayawada</h3>
+        <p>
+          ACP hoarding designed for long-term branding
+          on a multi-storey commercial property.
+        </p>
+
+        <video class="project-video" controls>
+          <source src="assets/videos/acp.mp4">
+        </video>
       </div>
 
-      <h3>Commercial Building – Vijayawada</h3>
-      <p>Large ACP hoarding designed for long-term branding.</p>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
 
-      <video class="project-video" controls>
-        <source src="assets/videos/acp.mp4" type="video/mp4">
-      </video>
     </div>
-
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
   </section>
 
   <!-- =========================
@@ -88,27 +107,34 @@
   <section>
     <h2>3D Letter Signage Projects</h2>
 
-    <div class="project-card">
-      <button class="video-btn" onclick="toggleVideo(this)">▶ Video</button>
+    <div class="product-grid">
 
-      <div class="slider">
-        <img src="assets/images/3d1.jpg">
-        <img src="assets/images/3d2.jpg">
-        <img src="assets/images/3d3.jpg">
+      <div class="card project-card">
+        <button class="video-btn" onclick="toggleVideo(this)">Video</button>
+
+        <div class="image-strip">
+          <img src="assets/images/3d1.jpg">
+          <img src="assets/images/3d2.jpg">
+          <img src="assets/images/3d3.jpg">
+        </div>
+
+        <h3>Clinic – Guntur</h3>
+        <p>
+          Illuminated 3D letters designed to enhance
+          brand trust and premium appearance.
+        </p>
+
+        <video class="project-video" controls>
+          <source src="assets/videos/3d.mp4">
+        </video>
       </div>
 
-      <h3>Clinic – Guntur</h3>
-      <p>Premium illuminated 3D letters for professional branding.</p>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
+      <div class="card project-card">…</div>
 
-      <video class="project-video" controls>
-        <source src="assets/videos/3d.mp4" type="video/mp4">
-      </video>
     </div>
-
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
-    <div class="project-card">…</div>
   </section>
 
 </main>
@@ -126,10 +152,12 @@
   <input id="width" placeholder="Width (ft)">
   <input id="height" placeholder="Height (ft)">
 
-  <button onclick="generateEstimate()">Calculate</button>
+  <button class="btn" onclick="generateEstimate()">Calculate</button>
   <p id="result"></p>
 
-  <button onclick="goWhatsApp()">Contact Now on WhatsApp</button>
+  <button class="btn-outline" onclick="goWhatsApp()">
+    Contact on WhatsApp
+  </button>
 </div>
 
 <!-- =========================
