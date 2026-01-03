@@ -1,155 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>V SIGN | Professional Signage Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LED Sign Boards, ACP Hoardings and 3D Letter Signage with instant budget estimation and WhatsApp consultation.">
+<meta charset="UTF-8">
+<title>V SIGN – Premium Signage Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
 </head>
 
 <body>
 
-<!-- =========================
-     PRODUCT OVERVIEW
-========================= -->
 <main class="container">
 
+  <!-- Intro -->
   <section>
-    <h1>Signage Solutions That Make Businesses Visible</h1>
-    <h2>Professional, durable and budget-transparent signage for growing businesses</h2>
-    <h3>Choose the right signage based on your business goal</h3>
+    <h1>Signage That Builds Visibility & Trust</h1>
+    <p>Professional LED, ACP & 3D signage trusted by businesses across AP & Telangana.</p>
   </section>
 
-  <!-- =========================
-       AMAZON-STYLE PRODUCT LIST
-  ========================= -->
-  <section class="product-list">
+  <!-- Products -->
+  <section>
+    <h2>Our Signage Products</h2>
 
-    <!-- LED -->
-    <div class="product-card">
-      <img src="assets/images/led.jpg" alt="LED Sign Board">
-      <div>
+    <div class="product-grid">
+
+      <div class="card product-card">
+        <img src="assets/images/led.jpg">
         <h3>LED Sign Boards</h3>
-        <ul>
-          <li>✔ High visibility day & night</li>
-          <li>✔ Best for retail & clinics</li>
-          <li>✔ Increases walk-in footfall</li>
-        </ul>
-        <button onclick="openChatbot()">Get Estimate</button>
+        <p>High-visibility signage for retail & clinics.</p>
+        <button class="btn" onclick="openChatbot()">Plan Budget</button>
       </div>
-    </div>
 
-    <!-- ACP -->
-    <div class="product-card">
-      <img src="assets/images/acp.jpg" alt="ACP Hoarding">
-      <div>
+      <div class="card product-card">
+        <img src="assets/images/acp.jpg">
         <h3>ACP Hoardings</h3>
-        <ul>
-          <li>✔ Long-term outdoor branding</li>
-          <li>✔ Weather resistant panels</li>
-          <li>✔ Ideal for buildings & showrooms</li>
-        </ul>
-        <button onclick="openChatbot()">Get Estimate</button>
+        <p>Durable outdoor branding for buildings.</p>
+        <button class="btn" onclick="openChatbot()">Plan Budget</button>
       </div>
-    </div>
 
-    <!-- 3D -->
-    <div class="product-card">
-      <img src="assets/images/3d.jpg" alt="3D Letter Signage">
-      <div>
+      <div class="card product-card">
+        <img src="assets/images/3d.jpg">
         <h3>3D Letter Signage</h3>
-        <ul>
-          <li>✔ Premium brand appearance</li>
-          <li>✔ Ideal for offices & hospitals</li>
-          <li>✔ High trust perception</li>
-        </ul>
-        <button onclick="openChatbot()">Get Estimate</button>
+        <p>Premium signage for offices & hospitals.</p>
+        <button class="btn" onclick="openChatbot()">Plan Budget</button>
       </div>
-    </div>
 
-  </section>
-
-  <!-- =========================
-       TESTIMONIALS
-  ========================= -->
-  <section>
-    <h2>What Our Clients Say</h2>
-
-    <div class="testimonial">
-      <p>
-        “Our LED board increased store visibility immediately.
-        Clear pricing and professional execution.”
-      </p>
-      <strong>Retail Owner – Hyderabad</strong>
-    </div>
-
-    <div class="testimonial">
-      <p>
-        “ACP hoarding quality is excellent.
-        The team handled everything end-to-end.”
-      </p>
-      <strong>Builder – Vijayawada</strong>
     </div>
   </section>
 
-  <!-- =========================
-       FAQ
-  ========================= -->
+  <!-- Testimonials -->
   <section>
-    <h2>Frequently Asked Questions</h2>
-
-    <p><strong>How is pricing calculated?</strong><br>
-    Pricing is based on width, height, material type and installation conditions.</p>
-
-    <p><strong>Is the online estimate final?</strong><br>
-    The estimate is approximate. Final pricing is confirmed after site inspection.</p>
-
-    <p><strong>Which signage is best for outdoor use?</strong><br>
-    ACP hoardings and LED boards are best for outdoor visibility.</p>
-  </section>
-
-  <!-- =========================
-       LOCATION
-  ========================= -->
-  <section>
-    <h2>Our Location</h2>
-    <p>Serving Andhra Pradesh & Telangana</p>
-
-    <iframe
-      src="https://www.google.com/maps?q=Hyderabad&t=&z=12&ie=UTF8&iwloc=&output=embed"
-      width="100%" height="300" style="border:0;"
-      loading="lazy">
-    </iframe>
+    <h2>What Businesses Say</h2>
+    <div class="product-grid">
+      <div class="testimonial">“Our LED board doubled walk-ins.” – Retail, Hyderabad</div>
+      <div class="testimonial">“ACP hoarding gave our building identity.” – Builder</div>
+      <div class="testimonial">“3D signage made our clinic premium.” – Doctor</div>
+    </div>
   </section>
 
 </main>
 
-<!-- =========================
-     CHATBOT / ESTIMATOR
-========================= -->
+<!-- Chatbot -->
 <div id="chatbot" class="chatbot">
   <h3>Instant Budget Estimator</h3>
-
-  <p>Select Signage Type</p>
   <button onclick="selectType('led')">LED</button>
   <button onclick="selectType('acp')">ACP</button>
-  <button onclick="selectType('threeD')">3D Letters</button>
+  <button onclick="selectType('threeD')">3D</button>
 
   <input id="width" placeholder="Width (ft)">
   <input id="height" placeholder="Height (ft)">
 
-  <button onclick="generateEstimate()">Calculate Estimate</button>
-
+  <button class="btn" onclick="generateEstimate()">Calculate</button>
   <p id="result"></p>
-
-  <button onclick="goWhatsApp()">Contact Now on WhatsApp</button>
+  <button class="btn-outline" onclick="goWhatsApp()">WhatsApp Now</button>
 </div>
 
-<!-- =========================
-     SCRIPTS
-========================= -->
 <script src="assets/js/layout.js"></script>
 <script src="assets/js/estimator.js"></script>
 <script src="assets/js/chatbot.js"></script>
