@@ -1,42 +1,26 @@
 import Layout from "../components/Layout";
-
-const products = [
-  {
-    name: "LED Boards",
-    img: "/led.jpg",
-    desc: "High visibility illuminated signage for retail and commercial use."
-  },
-  {
-    name: "ACP Hoardings",
-    img: "/acp.jpg",
-    desc: "Durable outdoor signage for buildings and highways."
-  },
-  {
-    name: "3D Letters",
-    img: "/3d.jpg",
-    desc: "Premium dimensional signage for brand identity."
-  }
-];
+import FAQAccordion from "../components/FAQAccordion";
 
 export default function Products() {
   return (
     <Layout>
+
       <section className="hero">
-        <h1>Our Products</h1>
-        <h2>Professionally engineered signage solutions</h2>
+        <div className="container">
+          <h1>Our Products</h1>
+          <h2>Signage solutions designed for visibility & durability</h2>
+        </div>
       </section>
 
-      <section className="section product-grid">
-        {products.map(p => (
-          <div key={p.name} className="card">
-            <img src={p.img} alt={p.name} />
-            <h3>{p.name}</h3>
-            <p>{p.desc}</p>
-            <button>Enquire Now</button>
-            <button style={{ marginLeft: "10px" }}>Calculate</button>
-          </div>
-        ))}
+      {/* Products section already exists here */}
+
+      <section className="section">
+        <div className="container">
+          <h2>Product FAQs</h2>
+          <FAQAccordion />
+        </div>
       </section>
+
     </Layout>
   );
 }
