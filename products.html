@@ -1,225 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signage Solutions for Business Growth – V SIGN</title>
+  <meta charset="UTF-8">
+  <title>Products | V SIGN Signage Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore LED, ACP and 3D signage solutions with instant budget planning and WhatsApp consultation.">
 
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="container nav">
-    <strong>V SIGN</strong>
-    <div class="nav-links" id="menu">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="gallery.html">Projects</a>
-      <a href="faq.html">Insights</a>
-      <a href="contact.html">Contact</a>
-      <button class="btn" onclick="openPlanner()">
-        <i class="fa-solid fa-calculator"></i> Plan Budget
-      </button>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-  </div>
-</header>
+<main class="container">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Signage is not decoration. It is business infrastructure.</h1>
-    <h2>
-      Every successful physical business invests in visibility,
-      clarity, and trust at the point of first contact.
-    </h2>
+  <!-- =========================
+       PAGE INTRO
+  ========================= -->
+  <section>
+    <h1>Our Signage Products</h1>
+    <h2>Transparent pricing, practical guidance and professional execution</h2>
+    <h3>Select a product, plan your budget and talk to us instantly</h3>
+  </section>
+
+  <!-- =========================
+       PRODUCT: LED SIGN BOARD
+  ========================= -->
+  <section class="product-section">
+    <h2>LED Sign Boards</h2>
     <p>
-      Below are the signage solutions businesses use at different
-      stages of growth.
+      LED sign boards are ideal for businesses that require
+      high visibility during both day and night.
     </p>
-  </div>
-</section>
 
-<!-- LED BOARDS -->
-<section class="section container">
-  <h2>LED Sign Boards — Visibility & Footfall</h2>
-
-  <div class="products">
-    <div class="card">
-      <img src="assets/images/led.jpg" alt="LED Sign Boards">
+    <!-- Budget Planner -->
+    <div class="calculator">
+      <h3>Plan Your LED Sign Board Budget</h3>
+      <button onclick="selectType('led')">Select LED Sign Board</button>
+      <input id="width" placeholder="Width (ft)">
+      <input id="height" placeholder="Height (ft)">
+      <button onclick="generateEstimate()">Calculate Estimate</button>
+      <p id="result"></p>
+      <button onclick="goWhatsApp()">Contact on WhatsApp</button>
     </div>
 
-    <div class="card">
-      <h3>Who should use this?</h3>
-      <p>
-        Retail stores, clinics, pharmacies, restaurants,
-        and any business that depends on walk-in customers.
-      </p>
+    <!-- FAQ -->
+    <div class="faq">
+      <h3>LED Sign Board – FAQ</h3>
+      <p><strong>Is LED signage suitable for outdoor use?</strong><br>
+      Yes, LED boards are weather-resistant and ideal for outdoor visibility.</p>
 
-      <h3>Business problem it solves</h3>
-      <p>
-        Customers often pass by without noticing a store.
-        LED boards attract attention day and night,
-        increasing discovery and footfall.
-      </p>
-
-      <h3>Why it works</h3>
-      <p>
-        Human attention is drawn to light and contrast.
-        LED signage ensures your business is seen before competitors.
-      </p>
-
-      <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">
-          <i class="fa-solid fa-ruler-combined"></i> Estimate Cost
-        </button>
-        <button class="btn">
-          <i class="fa-solid fa-phone"></i> Discuss Requirement
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ACP HOARDINGS -->
-<section class="section container">
-  <h2>ACP Hoardings — Authority & Longevity</h2>
-
-  <div class="products">
-    <div class="card">
-      <img src="assets/images/acp.jpg" alt="ACP Hoardings">
+      <p><strong>How long does an LED board last?</strong><br>
+      With proper maintenance, LED boards last 5–7 years.</p>
     </div>
 
-    <div class="card">
-      <h3>Who should use this?</h3>
+    <!-- Testimonial -->
+    <div class="testimonial">
       <p>
-        Builders, commercial complexes, institutions,
-        and businesses looking for long-term branding.
+        “After installing the LED board, our store visibility improved instantly.
+        The budget estimate was accurate and transparent.”
       </p>
-
-      <h3>Business problem it solves</h3>
-      <p>
-        Businesses that look temporary are perceived as risky.
-        ACP hoardings signal stability, permanence, and professionalism.
-      </p>
-
-      <h3>Why it works</h3>
-      <p>
-        ACP panels are durable, weather-resistant,
-        and visually clean — reinforcing brand trust over years.
-      </p>
-
-      <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">
-          <i class="fa-solid fa-ruler-combined"></i> Estimate Cost
-        </button>
-        <button class="btn">
-          <i class="fa-solid fa-phone"></i> Discuss Requirement
-        </button>
-      </div>
+      <strong>Retail Store Owner – Hyderabad</strong>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 3D LETTERS -->
-<section class="section container">
-  <h2>3D Letter Signage — Brand Maturity</h2>
+  <!-- =========================
+       PRODUCT: ACP HOARDING
+  ========================= -->
+  <section class="product-section">
+    <h2>ACP Hoardings</h2>
+    <p>
+      ACP hoardings provide long-term branding and are widely used
+      for commercial buildings and showrooms.
+    </p>
 
-  <div class="products">
-    <div class="card">
-      <img src="assets/images/3d.jpg" alt="3D Letter Signage">
+    <!-- Budget Planner -->
+    <div class="calculator">
+      <h3>Plan Your ACP Hoarding Budget</h3>
+      <button onclick="selectType('acp')">Select ACP Hoarding</button>
+      <input id="width" placeholder="Width (ft)">
+      <input id="height" placeholder="Height (ft)">
+      <button onclick="generateEstimate()">Calculate Estimate</button>
+      <p id="result"></p>
+      <button onclick="goWhatsApp()">Contact on WhatsApp</button>
     </div>
 
-    <div class="card">
-      <h3>Who should use this?</h3>
-      <p>
-        Corporate offices, showrooms, hospitals,
-        and brands competing on trust and perception.
-      </p>
+    <!-- FAQ -->
+    <div class="faq">
+      <h3>ACP Hoarding – FAQ</h3>
+      <p><strong>Is ACP suitable for large buildings?</strong><br>
+      Yes, ACP panels are lightweight and perfect for large façades.</p>
 
-      <h3>Business problem it solves</h3>
-      <p>
-        Flat signage often fails to differentiate premium brands.
-        3D letters create depth, elegance, and memorability.
-      </p>
-
-      <h3>Why it works</h3>
-      <p>
-        Customers associate dimensional signage
-        with quality, credibility, and scale.
-      </p>
-
-      <div class="card-actions">
-        <button class="btn" onclick="openPlanner()">
-          <i class="fa-solid fa-ruler-combined"></i> Estimate Cost
-        </button>
-        <button class="btn">
-          <i class="fa-solid fa-phone"></i> Discuss Requirement
-        </button>
-      </div>
+      <p><strong>Does ACP require frequent maintenance?</strong><br>
+      No, ACP hoardings require minimal maintenance.</p>
     </div>
-  </div>
-</section>
 
-<!-- DECISION CTA -->
-<section class="section container">
-  <h2>Choosing the right signage</h2>
-  <p>
-    The right signage depends on where your business is today
-    and where you want it to be in the next 3–5 years.
-  </p>
+    <!-- Testimonial -->
+    <div class="testimonial">
+      <p>
+        “The ACP hoarding quality exceeded our expectations.
+        Clear guidance and professional installation.”
+      </p>
+      <strong>Builder – Vijayawada</strong>
+    </div>
+  </section>
 
-  <button class="btn" onclick="openPlanner()">
-    <i class="fa-solid fa-calculator"></i> Plan Your Signage Budget
-  </button>
-</section>
+  <!-- =========================
+       PRODUCT: 3D LETTER SIGNAGE
+  ========================= -->
+  <section class="product-section">
+    <h2>3D Letter Signage</h2>
+    <p>
+      3D letters add a premium appearance and are best suited
+      for offices, hospitals and corporate spaces.
+    </p>
 
-<footer>
-  © V SIGN – Business Signage Solutions
-</footer>
+    <!-- Budget Planner -->
+    <div class="calculator">
+      <h3>Plan Your 3D Letter Signage Budget</h3>
+      <button onclick="selectType('threeD')">Select 3D Letter Signage</button>
+      <input id="width" placeholder="Width (ft)">
+      <input id="height" placeholder="Height (ft)">
+      <button onclick="generateEstimate()">Calculate Estimate</button>
+      <p id="result"></p>
+      <button onclick="goWhatsApp()">Contact on WhatsApp</button>
+    </div>
 
-<!-- FLOATING CTA -->
-<div class="floating">
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">
-    <i class="fa-brands fa-whatsapp"></i><span class="hint">WhatsApp</span>
-  </a>
-  <a class="call" href="tel:+91XXXXXXXXXX">
-    <i class="fa-solid fa-phone"></i><span class="hint">Call</span>
-  </a>
+    <!-- FAQ -->
+    <div class="faq">
+      <h3>3D Letter Signage – FAQ</h3>
+      <p><strong>Is 3D signage suitable for indoor use?</strong><br>
+      Yes, it is perfect for indoor branding and reception areas.</p>
+
+      <p><strong>What materials are used?</strong><br>
+      Acrylic, stainless steel and aluminum are commonly used.</p>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="testimonial">
+      <p>
+        “The 3D lettering gave our office a premium look.
+        Budget planning made decision-making easy.”
+      </p>
+      <strong>Clinic Owner – Guntur</strong>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================
+     CHATBOT (GLOBAL)
+========================= -->
+<div id="chatbot" class="chatbot">
+  <h3>Instant Budget Estimator</h3>
+
+  <p>Select Signage Type</p>
+  <button onclick="selectType('led')">LED</button>
+  <button onclick="selectType('acp')">ACP</button>
+  <button onclick="selectType('threeD')">3D Letters</button>
+
+  <input id="width" placeholder="Width (ft)">
+  <input id="height" placeholder="Height (ft)">
+
+  <button onclick="generateEstimate()">Calculate</button>
+  <p id="result"></p>
+
+  <button onclick="goWhatsApp()">Contact Now on WhatsApp</button>
 </div>
 
-<!-- PLANNER MODAL -->
-<div class="overlay" id="planner">
-  <div class="modal">
-    <h3>Budget Planner</h3>
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/estimator.js"></script>
+<script src="assets/js/chatbot.js"></script>
 
-    <label>Product</label>
-    <select id="product">
-      <option value="led">LED Sign Boards</option>
-      <option value="acp">ACP Hoardings</option>
-      <option value="3d">3D Letter Signage</option>
-    </select>
-
-    <label>Width (ft)</label>
-    <input id="w" type="number">
-
-    <label>Height (ft)</label>
-    <input id="h" type="number">
-
-    <button class="btn" onclick="calc()">Estimate</button>
-    <div class="estimate" id="result"></div>
-
-    <button class="btn" onclick="closePlanner()">Close</button>
-  </div>
-</div>
-
-<script src="assets/js/main.js"></script>
 </body>
 </html>
