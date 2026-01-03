@@ -4,18 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact – V SIGN</title>
+
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <!-- EmailJS -->
 <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
 <script>
-(function(){
-  emailjs.init("YOUR_PUBLIC_KEY");
-})();
+(function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
 </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,74 +26,134 @@
       <a href="gallery.html">Gallery</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <button class="btn" onclick="openPlanner()">Plan Budget</button>
+      <button class="btn" onclick="openPlanner()">
+        <i class="fa-solid fa-calculator"></i> Plan Budget
+      </button>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </div>
 </header>
 
-<section class="section container">
-  <h1>Get in Touch</h1>
-  <h2>Talk to our signage experts for clear guidance and transparent pricing</h2>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Let’s build your signage right</h1>
+    <h2>Trusted signage partner across Andhra Pradesh & Telangana</h2>
+  </div>
 </section>
 
-<section class="section container" style="max-width:600px">
-  <form id="contact-form">
+<!-- COMPANY INFO -->
+<section class="section container">
+  <h2>About V SIGN</h2>
+  <p>
+    V SIGN is a professional signage solutions company delivering
+    LED boards, ACP hoardings and 3D letter signage for businesses,
+    builders and institutions. We focus on clarity, durability and
+    transparent pricing.
+  </p>
+</section>
 
+<!-- OWNER -->
+<section class="section container">
+  <h2>Founder & Leadership</h2>
+  <p>
+    <strong>Founder:</strong> Mr. ___________<br>
+    <strong>Experience:</strong> 10+ years in signage fabrication & installation<br>
+    <strong>Philosophy:</strong> Quality workmanship · Honest pricing · Long-term trust
+  </p>
+</section>
+
+<!-- STATS -->
+<section class="section container">
+  <div class="products">
+    <div class="card">
+      <h3>300+</h3>
+      <p>Projects Delivered</p>
+    </div>
+    <div class="card">
+      <h3>4.8★</h3>
+      <p>Google Rating</p>
+    </div>
+    <div class="card">
+      <h3>10+ Years</h3>
+      <p>Industry Experience</p>
+    </div>
+    <div class="card">
+      <h3>AP & TS</h3>
+      <p>Service Locations</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section container">
+  <h2>Clients We Serve</h2>
+  <p>
+    Retail Stores · Clinics · Hospitals · Corporate Offices · Builders ·
+    Educational Institutions · Showrooms
+  </p>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section container" style="max-width:600px">
+  <h2>Send an Enquiry</h2>
+
+  <form id="contact-form">
     <label>Your Name</label>
     <input type="text" name="name" required>
 
-    <label>Email Address</label>
+    <label>Email</label>
     <input type="email" name="email" required>
 
-    <label>Phone Number</label>
+    <label>Phone</label>
     <input type="text" name="phone">
 
     <label>Your Requirement</label>
     <textarea name="message" rows="4" required></textarea>
 
-    <button class="btn" type="submit">Send Enquiry</button>
-
+    <button class="btn" type="submit">
+      <i class="fa-solid fa-paper-plane"></i> Submit
+    </button>
   </form>
+</section>
+
+<!-- MAP & REVIEWS -->
+<section class="section container">
+  <h2>Our Location & Reviews</h2>
+
+  <!-- Google Map -->
+  <iframe
+    src="https://www.google.com/maps?q=Hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="100%" height="320" style="border:0;border-radius:16px"
+    loading="lazy">
+  </iframe>
+
+  <p style="margin-top:14px">
+    Rated ★★★★★ by customers for quality, transparency and timely delivery.
+  </p>
 </section>
 
 <footer>
   © V SIGN – Premium Signage Solutions
 </footer>
 
+<!-- FLOATING CTA -->
 <div class="floating">
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="hint">WhatsApp</span>
+  </a>
+  <a class="call" href="tel:+91XXXXXXXXXX">
+    <i class="fa-solid fa-phone"></i>
+    <span class="hint">Call Now</span>
+  </a>
 </div>
 
-<!-- BUDGET PLANNER MODAL -->
-<div class="overlay" id="planner">
-  <div class="modal">
-    <h3>Budget Planner</h3>
-    <label>Width (ft)</label>
-    <input type="number" id="w">
-    <label>Height (ft)</label>
-    <input type="number" id="h">
-    <button class="btn" onclick="calc()">Estimate</button>
-    <div class="estimate" id="result"></div>
-    <button class="btn" onclick="closePlanner()">Close</button>
-  </div>
-</div>
+<script src="assets/js/main.js"></script>
 
 <script>
-function toggleMenu(){ menu.classList.toggle("open"); }
-function openPlanner(){ planner.style.display="flex"; }
-function closePlanner(){ planner.style.display="none"; }
-
-function calc(){
-  let w=document.getElementById("w").value;
-  let h=document.getElementById("h").value;
-  if(w && h){
-    document.getElementById("result").innerText =
-      `₹${w*h*850} – ₹${w*h*1500} approx`;
-  }
-}
-
 document.getElementById("contact-form").addEventListener("submit",function(e){
   e.preventDefault();
   emailjs.sendForm(
@@ -104,11 +161,11 @@ document.getElementById("contact-form").addEventListener("submit",function(e){
     "YOUR_TEMPLATE_ID",
     this
   ).then(
-    () => alert("Thank you! We will contact you shortly."),
+    () => alert("Thank you! We’ll contact you shortly."),
     () => alert("Something went wrong. Please try again.")
   );
 });
 </script>
-<script src="assets/js/main.js"></script>
+
 </body>
 </html>
