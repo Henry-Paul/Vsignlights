@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | V SIGN Signage Work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore real signage projects delivered by V SIGN across Andhra Pradesh and Telangana.">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+  <!-- =========================
+       PAGE INTRO
+  ========================= -->
+  <section>
+    <h1>Our Signage Projects</h1>
+    <h2>Real installations delivered for real businesses</h2>
+    <h3>Projects segmented by signage type</h3>
+  </section>
+
+  <!-- =========================
+       LED PROJECTS
+  ========================= -->
+  <section>
+    <h2>LED Sign Board Projects</h2>
+
+    <!-- Project Card -->
+    <div class="project-card">
+      <button class="video-btn" onclick="toggleVideo(this)">▶ Video</button>
+
+      <div class="slider">
+        <img src="assets/images/led1.jpg">
+        <img src="assets/images/led2.jpg">
+        <img src="assets/images/led3.jpg">
+      </div>
+
+      <h3>Retail Store – Hyderabad</h3>
+      <p>High-brightness LED sign board for maximum street visibility.</p>
+
+      <video class="project-video" controls>
+        <source src="assets/videos/led.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Duplicate 4 more projects -->
+    <div class="project-card">… (repeat with other images)</div>
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+  </section>
+
+  <!-- =========================
+       ACP PROJECTS
+  ========================= -->
+  <section>
+    <h2>ACP Hoarding Projects</h2>
+
+    <div class="project-card">
+      <button class="video-btn" onclick="toggleVideo(this)">▶ Video</button>
+
+      <div class="slider">
+        <img src="assets/images/acp1.jpg">
+        <img src="assets/images/acp2.jpg">
+        <img src="assets/images/acp3.jpg">
+      </div>
+
+      <h3>Commercial Building – Vijayawada</h3>
+      <p>Large ACP hoarding designed for long-term branding.</p>
+
+      <video class="project-video" controls>
+        <source src="assets/videos/acp.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+  </section>
+
+  <!-- =========================
+       3D LETTER PROJECTS
+  ========================= -->
+  <section>
+    <h2>3D Letter Signage Projects</h2>
+
+    <div class="project-card">
+      <button class="video-btn" onclick="toggleVideo(this)">▶ Video</button>
+
+      <div class="slider">
+        <img src="assets/images/3d1.jpg">
+        <img src="assets/images/3d2.jpg">
+        <img src="assets/images/3d3.jpg">
+      </div>
+
+      <h3>Clinic – Guntur</h3>
+      <p>Premium illuminated 3D letters for professional branding.</p>
+
+      <video class="project-video" controls>
+        <source src="assets/videos/3d.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+    <div class="project-card">…</div>
+  </section>
+
+</main>
+
+<!-- =========================
+     CHATBOT (GLOBAL)
+========================= -->
+<div id="chatbot" class="chatbot">
+  <h3>Instant Budget Estimator</h3>
+
+  <button onclick="selectType('led')">LED</button>
+  <button onclick="selectType('acp')">ACP</button>
+  <button onclick="selectType('threeD')">3D Letters</button>
+
+  <input id="width" placeholder="Width (ft)">
+  <input id="height" placeholder="Height (ft)">
+
+  <button onclick="generateEstimate()">Calculate</button>
+  <p id="result"></p>
+
+  <button onclick="goWhatsApp()">Contact Now on WhatsApp</button>
+</div>
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/estimator.js"></script>
+<script src="assets/js/chatbot.js"></script>
+
+<script>
+function toggleVideo(btn) {
+  const card = btn.closest(".project-card");
+  const video = card.querySelector(".project-video");
+
+  video.style.display =
+    video.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
