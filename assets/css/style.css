@@ -233,3 +233,24 @@ footer {
     font-size: 22px;
   }
 }
+
+/* Subtle fade-in for sections */
+section {
+  animation: fadeUp .6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button feedback */
+.btn:active {
+  transform: scale(.98);
+}
