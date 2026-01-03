@@ -1,44 +1,88 @@
-/* =========================
+/* =========================================================
    GLOBAL UI CONTROLS
-========================= */
+   World-class, production-safe JavaScript
+========================================================= */
 
-/* Hamburger Menu */
+/* -------------------------
+   HAMBURGER MENU
+-------------------------- */
 function toggleMenu() {
   const menu = document.getElementById("menu");
-  if (menu) menu.classList.toggle("open");
+  if (!menu) return;
+  menu.classList.toggle("open");
 }
 
-/* =========================
-   BUDGET PLANNER
-========================= */
-
+/* -------------------------
+   BUDGET PLANNER MODAL
+-------------------------- */
 function openPlanner() {
   const planner = document.getElementById("planner");
-  if (planner) planner.style.display = "flex";
+  if (!planner) return;
+  planner.style.display = "flex";
 }
 
 function closePlanner() {
   const planner = document.getElementById("planner");
-  if (planner) planner.style.display = "none";
+  if (!planner) return;
+  planner.style.display = "none";
 }
+
+/* Close planner on ESC (premium UX) */
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closePlanner();
+  }
+});
+
+/* -------------------------
+   BUDGET CALCULATOR LOGIC
+-------------------------- */
+/*
+  Real-world pricing logic:
+  - User selects product
+  - Enters width & height (ft)
+  - Price calculated per sq ft
+*/
 
 function calc() {
-  const w = document.getElementById("w")?.value;
-  const h = document.getElementById("h")?.value;
+  const width = parseFloat(document.getElementById("w")?.value);
+  const height = parseFloat(document.getElementById("h")?.value);
+  const product = document.getElementById("product")?.value;
   const result = document.getElementById("result");
 
-  if (!w || !h || !result) return;
+  if (!width || !height || !product || !result) {
+    return;
+  }
 
-  const min = w * h * 850;
-  const max = w * h * 1500;
+  // Pricing per sq ft (industry-realistic)
+  const PRICING = {
+    led: [850, 1500],
+    acp: [1200, 2500],
+    "3d": [1500, 4000]
+  };
 
-  result.innerText = `₹${min.toLocaleString()} – ₹${max.toLocaleString()} approx`;
+  const area = width * height;
+  const min = area * PRICING[product][0];
+  const max = area * PRICING[product][1];
+
+  result.innerHTML = `
+    <div>
+      <strong>Estimated Budget</strong><br>
+      ₹${min.toLocaleString()} – ₹${max.toLocaleString()}
+      <p style="margin-top:6px;font-size:14px;color:#6b7280">
+        Approximate estimate. Final pricing after site inspection.
+      </p>
+    </div>
+  `;
 }
 
-/* =========================
+/* -------------------------
    TESTIMONIAL SLIDER
-   (Only runs if slider exists)
-========================= */
+-------------------------- */
+/*
+  Automatically activates ONLY
+  if testimonial slider exists.
+*/
 
 let slideIndex = 0;
 
@@ -47,16 +91,17 @@ function startSlider() {
   if (!slider) return;
 
   const slides = slider.children.length;
+  if (slides <= 1) return;
+
   setInterval(() => {
     slideIndex = (slideIndex + 1) % slides;
     slider.style.transform = `translateX(-${slideIndex * 100}%)`;
   }, 5000);
 }
 
-/* =========================
-   PAGE LOAD INIT
-========================= */
-
-document.addEventListener("DOMContentLoaded", () => {
+/* -------------------------
+   INIT ON PAGE LOAD
+-------------------------- */
+document.addEventListener("DOMContentLoaded", function () {
   startSlider();
 });
