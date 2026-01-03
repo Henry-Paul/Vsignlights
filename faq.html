@@ -1,123 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>FAQs – V Sign Lights</title>
-
-<style>
-/* ===== RESET ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;color:#0f172a;line-height:1.6}
-a{text-decoration:none;color:inherit}
-
-/* ===== HEADER ===== */
-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
-.nav{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center}
-nav{display:flex;gap:20px}
-nav a{color:#6b7280;font-weight:600}
-.plan-btn{background:#0b5ed7;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer}
-.hamburger{display:none;font-size:24px;cursor:pointer}
-
-@media(max-width:768px){
-  nav{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px}
-  nav.open{display:flex}
-  .hamburger{display:block}
-}
-
-/* ===== PAGE ===== */
-.section{padding:70px 20px;max-width:1200px;margin:auto}
-h1{text-align:center;font-size:36px;margin-bottom:20px}
-h2{margin-top:40px;margin-bottom:10px}
-
-/* ===== FAQ ===== */
-.faq details{border-bottom:1px solid #e5e7eb;padding:16px 0}
-.faq summary{font-weight:600;cursor:pointer;font-size:16px}
-.faq p{margin-top:8px;color:#6b7280}
-
-/* ===== MODAL ===== */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center}
-.modal{background:#fff;padding:24px;border-radius:14px;width:90%;max-width:420px}
-
-/* ===== FLOATING ===== */
-.floating{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px}
-.floating a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
-.whatsapp{background:#25d366}
-.call{background:#0b5ed7}
-
-/* ===== FOOTER ===== */
-footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs – V SIGN</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
+  <div class="container nav">
     <strong>V SIGN</strong>
-    <nav id="menu">
+    <div class="nav-links" id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="gallery.html">Gallery</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <button class="plan-btn" onclick="openPlanner()">Plan Budget</button>
-    </nav>
+      <button class="btn" onclick="openPlanner()">Plan Budget</button>
+    </div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
-<section class="section">
+<section class="section container">
   <h1>Frequently Asked Questions</h1>
+  <h2>Clear answers to help you plan your signage confidently</h2>
+</section>
 
+<section class="section container">
   <div class="faq">
 
     <details>
       <summary>How much does signage cost?</summary>
       <p>
-        Signage pricing depends on width, height, material type
-        (LED, ACP, 3D letters) and installation conditions.
-        Use our Budget Planner to get an approximate estimate.
+        Signage pricing depends on the size (width × height), material
+        such as LED, ACP or 3D letters, and installation conditions.
+        You can use our Budget Planner to get an approximate estimate instantly.
       </p>
     </details>
 
     <details>
-      <summary>Is the budget estimate final?</summary>
+      <summary>Is the budget shown on the website final?</summary>
       <p>
-        No. The estimate is only for planning purposes.
-        Final pricing is confirmed after site inspection.
+        No. The budget shown is an approximate range for planning purposes.
+        Final pricing is confirmed after site inspection and design finalisation.
       </p>
     </details>
 
     <details>
-      <summary>Do you provide installation?</summary>
+      <summary>Do you provide installation services?</summary>
       <p>
-        Yes. We provide complete fabrication and professional
-        installation services.
+        Yes. We provide complete fabrication and professional installation
+        services for all signage projects.
       </p>
     </details>
 
     <details>
       <summary>Which signage is best for outdoor use?</summary>
       <p>
-        ACP hoardings and LED boards are best suited for outdoor
+        ACP hoardings and LED sign boards are best suited for outdoor
         environments due to durability and visibility.
       </p>
     </details>
 
     <details>
-      <summary>Which locations do you serve?</summary>
+      <summary>Do you handle permissions and approvals?</summary>
       <p>
-        We serve businesses across Andhra Pradesh and Telangana,
-        including Hyderabad, Vijayawada and Vizag.
+        We guide clients regarding local signage regulations and
+        permission requirements where applicable.
       </p>
     </details>
 
     <details>
-      <summary>Do you help with permissions?</summary>
+      <summary>Which areas do you serve?</summary>
       <p>
-        We guide clients regarding local signage rules
-        and permission requirements where applicable.
+        We serve businesses across Andhra Pradesh and Telangana,
+        including Hyderabad, Vijayawada, Vizag, and surrounding regions.
+      </p>
+    </details>
+
+    <details>
+      <summary>How long does a signage project take?</summary>
+      <p>
+        Timelines vary depending on size and complexity.
+        Most standard signage projects are completed within
+        7–14 working days after approval.
       </p>
     </details>
 
@@ -133,7 +102,7 @@ footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
   <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
 </div>
 
-<!-- BUDGET PLANNER -->
+<!-- BUDGET PLANNER MODAL -->
 <div class="overlay" id="planner">
   <div class="modal">
     <h3>Budget Planner</h3>
@@ -141,22 +110,22 @@ footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
     <input type="number" id="w">
     <label>Height (ft)</label>
     <input type="number" id="h">
-    <button onclick="calculate()">Estimate</button>
-    <p id="result"></p>
-    <button onclick="closePlanner()">Close</button>
+    <button class="btn" onclick="calc()">Estimate</button>
+    <div class="estimate" id="result"></div>
+    <button class="btn" onclick="closePlanner()">Close</button>
   </div>
 </div>
 
 <script>
-function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
-function openPlanner(){document.getElementById("planner").style.display="flex"}
-function closePlanner(){document.getElementById("planner").style.display="none"}
-function calculate(){
+function toggleMenu(){ menu.classList.toggle("open"); }
+function openPlanner(){ planner.style.display="flex"; }
+function closePlanner(){ planner.style.display="none"; }
+function calc(){
   let w=document.getElementById("w").value;
   let h=document.getElementById("h").value;
-  if(w&&h){
-    let min=w*h*850,max=w*h*1500;
-    document.getElementById("result").innerText=`₹${min} – ₹${max} approx`;
+  if(w && h){
+    document.getElementById("result").innerText =
+      `₹${w*h*850} – ₹${w*h*1500} approx`;
   }
 }
 </script>
