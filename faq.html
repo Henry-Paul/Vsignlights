@@ -1,289 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQs – V SIGN Premium Signage</title>
-
-<meta name="description" content="Frequently asked questions about signage products, pricing, installation, timelines and services offered by V SIGN.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FAQs – V Sign Lights</title>
 
 <style>
-:root{
-  --blue:#0B5ED7;
-  --light:#F4F8FF;
-  --text:#0F172A;
-  --muted:#6B7280;
-  --border:#E5E7EB;
+/* ===== RESET ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#0f172a;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
+.nav{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center}
+nav{display:flex;gap:20px}
+nav a{color:#6b7280;font-weight:600}
+.plan-btn{background:#0b5ed7;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer}
+.hamburger{display:none;font-size:24px;cursor:pointer}
+
+@media(max-width:768px){
+  nav{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px}
+  nav.open{display:flex}
+  .hamburger{display:block}
 }
 
-*{box-sizing:border-box}
+/* ===== PAGE ===== */
+.section{padding:70px 20px;max-width:1200px;margin:auto}
+h1{text-align:center;font-size:36px;margin-bottom:20px}
+h2{margin-top:40px;margin-bottom:10px}
 
-body{
-  margin:0;
-  font-family:Inter,system-ui;
-  color:var(--text);
-  background:#fff;
-}
+/* ===== FAQ ===== */
+.faq details{border-bottom:1px solid #e5e7eb;padding:16px 0}
+.faq summary{font-weight:600;cursor:pointer;font-size:16px}
+.faq p{margin-top:8px;color:#6b7280}
 
-/* HEADER */
-header{
-  border-bottom:1px solid var(--border);
-  background:#fff;
-}
-.header-wrap{
-  max-width:1200px;
-  margin:auto;
-  padding:18px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:500;
-}
-nav a:hover{color:var(--blue);}
+/* ===== MODAL ===== */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center}
+.modal{background:#fff;padding:24px;border-radius:14px;width:90%;max-width:420px}
 
-/* HERO */
-.hero{
-  background:linear-gradient(180deg,#F4F8FF,white);
-  padding:80px 24px;
-}
-.hero-wrap{
-  max-width:1200px;
-  margin:auto;
-}
-.hero h1{
-  font-size:44px;
-  font-weight:700;
-}
-.hero h2{
-  margin-top:14px;
-  font-size:22px;
-  color:var(--muted);
-  max-width:820px;
-}
-.hero h3{
-  margin-top:24px;
-  font-size:15px;
-  color:var(--muted);
-}
+/* ===== FLOATING ===== */
+.floating{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px}
+.floating a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
+.whatsapp{background:#25d366}
+.call{background:#0b5ed7}
 
-/* SECTION */
-.section{
-  padding:70px 24px;
-}
-.wrap{
-  max-width:1200px;
-  margin:auto;
-}
-.section h2{
-  font-size:32px;
-  font-weight:600;
-}
-.section p{
-  margin-top:10px;
-  color:var(--muted);
-  max-width:760px;
-}
-
-/* FAQ */
-.faq{
-  margin-top:40px;
-  max-width:900px;
-}
-.faq-item{
-  border-bottom:1px solid var(--border);
-  padding:22px 0;
-}
-.faq-item h4{
-  margin:0;
-  font-size:17px;
-  font-weight:600;
-}
-.faq-item p{
-  margin-top:8px;
-  font-size:15px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-/* FOOTER */
-footer{
-  border-top:1px solid var(--border);
-  padding:40px 24px;
-  background:#F9FAFB;
-}
-footer .wrap{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:24px;
-  font-size:14px;
-}
-footer a{
-  display:block;
-  margin-top:6px;
-  text-decoration:none;
-  color:var(--muted);
-}
+/* ===== FOOTER ===== */
+footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-wrap">
+  <div class="nav">
     <strong>V SIGN</strong>
-    <nav>
+    <nav id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="blogs.html">Blogs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
+      <button class="plan-btn" onclick="openPlanner()">Plan Budget</button>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-wrap">
-    <h1>Frequently asked questions</h1>
-    <h2>Clear answers to common questions about signage products, pricing, timelines and services.</h2>
-    <h3>Designed to help you make confident decisions</h3>
-  </div>
-</section>
-
 <section class="section">
-  <div class="wrap">
-    <h2>Product & pricing questions</h2>
+  <h1>Frequently Asked Questions</h1>
 
-    <div class="faq">
-      <div class="faq-item">
-        <h4>How is signage pricing calculated?</h4>
-        <p>
-          Pricing depends on size (square feet), material type, lighting requirements,
-          installation height and location complexity.
-        </p>
-      </div>
+  <div class="faq">
 
-      <div class="faq-item">
-        <h4>Why do prices vary between LED boards and ACP hoardings?</h4>
-        <p>
-          LED boards involve lighting components and power supplies,
-          while ACP hoardings focus more on panel strength and structure.
-        </p>
-      </div>
+    <details>
+      <summary>How much does signage cost?</summary>
+      <p>
+        Signage pricing depends on width, height, material type
+        (LED, ACP, 3D letters) and installation conditions.
+        Use our Budget Planner to get an approximate estimate.
+      </p>
+    </details>
 
-      <div class="faq-item">
-        <h4>Do you provide custom sizes?</h4>
-        <p>
-          Yes. All signage is custom-manufactured based on your exact width,
-          height and branding requirements.
-        </p>
-      </div>
+    <details>
+      <summary>Is the budget estimate final?</summary>
+      <p>
+        No. The estimate is only for planning purposes.
+        Final pricing is confirmed after site inspection.
+      </p>
+    </details>
 
-      <div class="faq-item">
-        <h4>Are the prices mentioned final?</h4>
-        <p>
-          Prices shown are indicative ranges. Final pricing is confirmed
-          after site inspection and design finalisation.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+    <details>
+      <summary>Do you provide installation?</summary>
+      <p>
+        Yes. We provide complete fabrication and professional
+        installation services.
+      </p>
+    </details>
 
-<section class="section" style="background:var(--light)">
-  <div class="wrap">
-    <h2>Installation & service questions</h2>
+    <details>
+      <summary>Which signage is best for outdoor use?</summary>
+      <p>
+        ACP hoardings and LED boards are best suited for outdoor
+        environments due to durability and visibility.
+      </p>
+    </details>
 
-    <div class="faq">
-      <div class="faq-item">
-        <h4>Do you handle installation?</h4>
-        <p>
-          Yes. We provide end-to-end services including fabrication,
-          transport and professional installation.
-        </p>
-      </div>
+    <details>
+      <summary>Which locations do you serve?</summary>
+      <p>
+        We serve businesses across Andhra Pradesh and Telangana,
+        including Hyderabad, Vijayawada and Vizag.
+      </p>
+    </details>
 
-      <div class="faq-item">
-        <h4>How long does installation take?</h4>
-        <p>
-          Installation timelines vary based on size and site conditions,
-          but most projects are completed within 1–3 days.
-        </p>
-      </div>
+    <details>
+      <summary>Do you help with permissions?</summary>
+      <p>
+        We guide clients regarding local signage rules
+        and permission requirements where applicable.
+      </p>
+    </details>
 
-      <div class="faq-item">
-        <h4>Do you help with permissions?</h4>
-        <p>
-          We guide clients on local signage regulations and
-          permission requirements wherever applicable.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Which locations do you serve?</h4>
-        <p>
-          We serve businesses across Andhra Pradesh and Telangana.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <h2>General questions</h2>
-
-    <div class="faq">
-      <div class="faq-item">
-        <h4>How do I get started?</h4>
-        <p>
-          You can explore products, review pricing information,
-          or contact us directly to discuss your requirements.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Do you offer maintenance support?</h4>
-        <p>
-          Yes. Maintenance and repair services are available
-          depending on the product type.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h4>How soon will I receive a response?</h4>
-        <p>
-          Our team usually responds within 24 business hours.
-        </p>
-      </div>
-    </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div>
-      <strong>V SIGN</strong>
-      <p style="color:var(--muted)">Premium signage solutions</p>
-    </div>
-    <div>
-      <strong>Explore</strong>
-      <a href="products.html">Products</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="testimonials.html">Testimonials</a>
-    </div>
-    <div>
-      <strong>Contact</strong>
-      <a href="contact.html">Get in touch</a>
-    </div>
-  </div>
+  © V SIGN – Premium Signage Solutions
 </footer>
+
+<div class="floating">
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
+  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
+</div>
+
+<!-- BUDGET PLANNER -->
+<div class="overlay" id="planner">
+  <div class="modal">
+    <h3>Budget Planner</h3>
+    <label>Width (ft)</label>
+    <input type="number" id="w">
+    <label>Height (ft)</label>
+    <input type="number" id="h">
+    <button onclick="calculate()">Estimate</button>
+    <p id="result"></p>
+    <button onclick="closePlanner()">Close</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
+function openPlanner(){document.getElementById("planner").style.display="flex"}
+function closePlanner(){document.getElementById("planner").style.display="none"}
+function calculate(){
+  let w=document.getElementById("w").value;
+  let h=document.getElementById("h").value;
+  if(w&&h){
+    let min=w*h*850,max=w*h*1500;
+    document.getElementById("result").innerText=`₹${min} – ₹${max} approx`;
+  }
+}
+</script>
 
 </body>
 </html>
