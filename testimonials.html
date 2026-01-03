@@ -1,130 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials – V SIGN</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>Testimonials & Insights | V SIGN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Real business testimonials and expert insights on LED, ACP and 3D signage solutions.">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
-    <strong>V SIGN</strong>
-    <div class="nav-links" id="menu">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <button class="btn" onclick="openPlanner()">Plan Budget</button>
+<main class="container">
+
+  <!-- =========================
+       PAGE INTRO
+  ========================= -->
+  <section>
+    <h1>Trusted by Businesses Across Andhra Pradesh & Telangana</h1>
+    <h2>Real experiences from real businesses, segmented by product</h2>
+  </section>
+
+  <!-- =========================
+       TESTIMONIALS – LED
+  ========================= -->
+  <section>
+    <h2>LED Sign Board – Business Testimonials</h2>
+
+    <div class="testimonial">
+      <p>
+        “Our LED sign board completely changed the visibility of our store.
+        Footfall increased within the first week.”
+      </p>
+      <strong>Retail Store Owner – Hyderabad</strong>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  </div>
-</header>
 
-<section class="section container">
-  <h1>What Our Clients Say</h1>
-  <h2>Trusted by businesses across Andhra Pradesh & Telangana</h2>
-</section>
-
-<section class="section container">
-  <div class="slider">
-    <div class="slider-track" id="slider">
-
-      <div class="review">
-        <h3>★★★★★</h3>
-        <p>
-          We got our LED shop board done by V SIGN and the quality
-          exceeded expectations. Bright, clean finish and delivered on time.
-        </p>
-        <p><strong>Retail Store Owner</strong> · Hyderabad</p>
-      </div>
-
-      <div class="review">
-        <h3>★★★★★</h3>
-        <p>
-          Transparent pricing and very professional handling.
-          The ACP hoardings for our building look premium.
-        </p>
-        <p><strong>Builder</strong> · Vijayawada</p>
-      </div>
-
-      <div class="review">
-        <h3>★★★★☆</h3>
-        <p>
-          3D letter signage gave our office a classy look.
-          Installation team knew exactly what they were doing.
-        </p>
-        <p><strong>Corporate Office</strong> · Vizag</p>
-      </div>
-
+    <div class="testimonial">
+      <p>
+        “Clear pricing, professional installation and excellent after-support.
+        The estimator matched the final cost closely.”
+      </p>
+      <strong>Pharmacy Owner – Warangal</strong>
     </div>
+  </section>
+
+  <!-- =========================
+       TESTIMONIALS – ACP
+  ========================= -->
+  <section>
+    <h2>ACP Hoardings – Business Testimonials</h2>
+
+    <div class="testimonial">
+      <p>
+        “The ACP hoarding gave our building a premium identity.
+        Installation was smooth and well-managed.”
+      </p>
+      <strong>Commercial Builder – Vijayawada</strong>
+    </div>
+  </section>
+
+  <!-- =========================
+       TESTIMONIALS – 3D
+  ========================= -->
+  <section>
+    <h2>3D Letter Signage – Business Testimonials</h2>
+
+    <div class="testimonial">
+      <p>
+        “The 3D letters elevated our clinic’s brand image.
+        Patients immediately noticed the difference.”
+      </p>
+      <strong>Clinic Owner – Guntur</strong>
+    </div>
+  </section>
+
+  <!-- =========================
+       BLOGS OVERVIEW
+  ========================= -->
+  <section>
+    <h2>Expert Insights from the Signage Industry</h2>
+
+    <!-- Blog 1 -->
+    <div class="blog-card">
+      <h3>How LED Sign Boards Help Small Businesses Grow Faster</h3>
+      <p>
+        LED sign boards are one of the most effective tools for
+        attracting walk-in customers, especially for retail businesses.
+      </p>
+      <button onclick="openBlog('blog1')">View More</button>
+    </div>
+
+    <!-- Blog 2 -->
+    <div class="blog-card">
+      <h3>Why ACP Hoardings Are a Long-Term Branding Investment</h3>
+      <p>
+        ACP hoardings offer durability, scalability and
+        professional aesthetics for large commercial spaces.
+      </p>
+      <button onclick="openBlog('blog2')">View More</button>
+    </div>
+
+    <!-- Blog 3 -->
+    <div class="blog-card">
+      <h3>3D Letter Signage: Building Trust Through Premium Design</h3>
+      <p>
+        Businesses that invest in 3D lettering often see
+        higher brand recall and trust.
+      </p>
+      <button onclick="openBlog('blog3')">View More</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================
+     BLOG POPUP MODAL
+========================= -->
+<div id="blogModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeBlog()">×</span>
+
+    <img id="blogImage" src="" alt="Blog Image">
+
+    <div id="blogContent"></div>
   </div>
-
-  <!-- Manual controls -->
-  <div style="text-align:center;margin-top:20px">
-    <button class="btn" onclick="prev()">←</button>
-    <button class="btn" onclick="next()">→</button>
-  </div>
-</section>
-
-<footer>
-  © V SIGN – Premium Signage Solutions
-</footer>
-
-<div class="floating">
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
-  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
 </div>
 
-<!-- BUDGET PLANNER MODAL -->
-<div class="overlay" id="planner">
-  <div class="modal">
-    <h3>Budget Planner</h3>
-    <label>Width (ft)</label>
-    <input type="number" id="w">
-    <label>Height (ft)</label>
-    <input type="number" id="h">
-    <button class="btn" onclick="calc()">Estimate</button>
-    <div class="estimate" id="result"></div>
-    <button class="btn" onclick="closePlanner()">Close</button>
-  </div>
+<!-- =========================
+     CHATBOT (GLOBAL)
+========================= -->
+<div id="chatbot" class="chatbot">
+  <h3>Instant Budget Estimator</h3>
+
+  <button onclick="selectType('led')">LED</button>
+  <button onclick="selectType('acp')">ACP</button>
+  <button onclick="selectType('threeD')">3D Letters</button>
+
+  <input id="width" placeholder="Width (ft)">
+  <input id="height" placeholder="Height (ft)">
+
+  <button onclick="generateEstimate()">Calculate</button>
+  <p id="result"></p>
+
+  <button onclick="goWhatsApp()">Contact Now on WhatsApp</button>
 </div>
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/estimator.js"></script>
+<script src="assets/js/chatbot.js"></script>
 
 <script>
-let index = 0;
-const slider = document.getElementById("slider");
-const slides = slider.children.length;
+function openBlog(id) {
+  const content = {
+    blog1: {
+      img: "assets/images/led.jpg",
+      text: `
+      <h2>How LED Sign Boards Help Small Businesses Grow Faster</h2>
+      <p>
+        LED sign boards act as silent salespeople.
+        They work 24/7, attracting attention even when your business is closed.
+      </p>
+      <p><strong>Why do customers notice LED boards more?</strong><br>
+      Bright illumination and motion naturally draw the human eye.</p>
+      <p><strong>Is LED signage expensive?</strong><br>
+      The initial investment is affordable and the returns are high.</p>
+      `
+    },
+    blog2: {
+      img: "assets/images/acp.jpg",
+      text: `
+      <h2>Why ACP Hoardings Are a Long-Term Branding Investment</h2>
+      <p>
+        ACP hoardings are designed for durability and scale.
+        They give businesses a strong physical presence.
+      </p>
+      <p><strong>Do ACP hoardings last long?</strong><br>
+      Yes, they are weather-resistant and suitable for outdoor use.</p>
+      <p><strong>Are they suitable for small businesses?</strong><br>
+      Absolutely, especially for buildings and main-road visibility.</p>
+      `
+    },
+    blog3: {
+      img: "assets/images/3d.jpg",
+      text: `
+      <h2>3D Letter Signage: Building Trust Through Premium Design</h2>
+      <p>
+        Customers often judge a business by its signage.
+        3D lettering creates a premium, trustworthy impression.
+      </p>
+      <p><strong>Where is 3D signage best used?</strong><br>
+      Offices, clinics, hospitals and corporate buildings.</p>
+      <p><strong>Is 3D signage customizable?</strong><br>
+      Yes, materials, lighting and size can be customized.</p>
+      `
+    }
+  };
 
-function next(){
-  index = (index + 1) % slides;
-  slider.style.transform = `translateX(-${index * 100}%)`;
+  document.getElementById("blogImage").src = content[id].img;
+  document.getElementById("blogContent").innerHTML = content[id].text;
+  document.getElementById("blogModal").style.display = "block";
 }
 
-function prev(){
-  index = (index - 1 + slides) % slides;
-  slider.style.transform = `translateX(-${index * 100}%)`;
-}
-
-setInterval(next, 5000);
-
-function toggleMenu(){ menu.classList.toggle("open"); }
-function openPlanner(){ planner.style.display="flex"; }
-function closePlanner(){ planner.style.display="none"; }
-function calc(){
-  let w=document.getElementById("w").value;
-  let h=document.getElementById("h").value;
-  if(w && h){
-    document.getElementById("result").innerText =
-      `₹${w*h*850} – ₹${w*h*1500} approx`;
-  }
+function closeBlog() {
+  document.getElementById("blogModal").style.display = "none";
 }
 </script>
-<script src="assets/js/main.js"></script>
+
 </body>
 </html>
