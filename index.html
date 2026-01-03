@@ -1,303 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>V SIGN – Premium Signage Solutions</title>
-
-<meta name="description" content="Premium signage solutions including LED boards, ACP hoardings and 3D letters. Trusted by businesses across Andhra Pradesh and Telangana.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>V Sign Lights – Premium Signage Solutions</title>
 
 <style>
-:root{
-  --blue:#0B5ED7;
-  --light:#F4F8FF;
-  --text:#0F172A;
-  --muted:#6B7280;
-  --border:#E5E7EB;
+/* ===== BASIC RESET ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#0f172a;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
+.nav{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center}
+nav{display:flex;gap:20px}
+nav a{color:#6b7280;font-weight:600}
+.plan-btn{background:#0b5ed7;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer}
+.hamburger{display:none;font-size:24px;cursor:pointer}
+
+@media(max-width:768px){
+  nav{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px}
+  nav.open{display:flex}
+  .hamburger{display:block}
 }
 
-*{box-sizing:border-box}
+/* ===== HERO ===== */
+.hero{padding:80px 20px;background:#f4f8ff;text-align:center}
+.hero h1{font-size:38px}
+.hero h2{color:#6b7280;margin-top:10px}
+.hero button{margin-top:20px}
 
-body{
-  margin:0;
-  font-family:Inter,system-ui;
-  color:var(--text);
-  background:#fff;
-}
+/* ===== PRODUCT SLIDER ===== */
+.section{padding:70px 20px;max-width:1200px;margin:auto}
+.products{display:flex;gap:20px;overflow-x:auto}
+.card{min-width:260px;border:1px solid #e5e7eb;border-radius:14px;padding:16px}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+.card h3{margin-top:10px}
+.card button{margin-top:10px}
 
-/* HEADER */
-header{
-  border-bottom:1px solid var(--border);
-  background:#fff;
-}
-.header-wrap{
-  max-width:1200px;
-  margin:auto;
-  padding:18px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:500;
-}
-nav a:hover{color:var(--blue);}
+/* ===== TESTIMONIAL SLIDER ===== */
+.testimonials{display:flex;gap:20px;overflow-x:auto}
+.review{min-width:280px;background:#f4f8ff;padding:16px;border-radius:12px}
 
-/* HERO */
-.hero{
-  background:linear-gradient(180deg,#F4F8FF,white);
-  padding:90px 24px;
-}
-.hero-wrap{
-  max-width:1200px;
-  margin:auto;
-}
-.hero h1{
-  font-size:46px;
-  font-weight:700;
-  max-width:700px;
-}
-.hero h2{
-  margin-top:16px;
-  font-size:22px;
-  font-weight:500;
-  color:var(--muted);
-  max-width:720px;
-}
-.hero h3{
-  margin-top:28px;
-  font-size:16px;
-  color:var(--muted);
-}
-.hero .cta{
-  margin-top:36px;
-  padding:14px 26px;
-  background:var(--blue);
-  color:white;
-  border-radius:10px;
-  display:inline-block;
-  text-decoration:none;
-  font-weight:600;
-}
+/* ===== FAQ ===== */
+.faq details{border-bottom:1px solid #e5e7eb;padding:14px 0}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{margin-top:8px;color:#6b7280}
 
-/* SECTION */
-.section{
-  padding:80px 24px;
-}
-.wrap{
-  max-width:1200px;
-  margin:auto;
-}
-.section h2{
-  font-size:34px;
-  font-weight:600;
-}
-.section p{
-  margin-top:12px;
-  color:var(--muted);
-  max-width:700px;
-}
+/* ===== MODAL ===== */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center}
+.modal{background:#fff;padding:24px;border-radius:14px;width:90%;max-width:420px}
 
-/* PRODUCT SLIDER */
-.products{
-  margin-top:40px;
-  display:flex;
-  gap:24px;
-  overflow-x:auto;
-  padding-bottom:10px;
-}
-.product{
-  min-width:280px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:22px;
-}
-.product h3{
-  margin:0;
-  font-size:18px;
-}
-.product p{
-  margin-top:8px;
-  font-size:14px;
-  color:var(--muted);
-}
-.price{
-  margin-top:14px;
-  font-weight:600;
-  color:var(--blue);
-}
+/* ===== FLOATING ===== */
+.floating{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px}
+.floating a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
+.whatsapp{background:#25d366}
+.call{background:#0b5ed7}
 
-/* TESTIMONIALS */
-.testimonials{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;
-  margin-top:40px;
-}
-.review{
-  background:var(--light);
-  border-radius:14px;
-  padding:22px;
-}
-.review strong{display:block;}
-.review span{
-  color:#f4b400;
-}
-
-/* FAQ */
-.faq{
-  margin-top:40px;
-}
-.faq-item{
-  border-bottom:1px solid var(--border);
-  padding:18px 0;
-}
-.faq-item h4{
-  margin:0;
-  font-size:16px;
-}
-.faq-item p{
-  margin-top:6px;
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* FOOTER */
-footer{
-  border-top:1px solid var(--border);
-  padding:40px 24px;
-  background:#F9FAFB;
-}
-footer .wrap{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:24px;
-  font-size:14px;
-}
-footer a{
-  display:block;
-  margin-top:6px;
-  text-decoration:none;
-  color:var(--muted);
-}
+/* ===== FOOTER ===== */
+footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-wrap">
+  <div class="nav">
     <strong>V SIGN</strong>
-    <nav>
+    <nav id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="blogs.html">Blogs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
+      <button class="plan-btn" onclick="openPlanner()">Plan Budget</button>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-wrap">
-    <h1>Premium signage that elevates your brand</h1>
-    <h2>LED boards, ACP hoardings and custom signage solutions designed for visibility, durability and impact.</h2>
-    <h3>Serving Andhra Pradesh & Telangana</h3>
-    <a class="cta" href="products.html">Explore products</a>
-  </div>
+  <h1>Premium Signage Solutions</h1>
+  <h2>LED Boards • ACP Hoardings • 3D Letters</h2>
+  <button class="plan-btn" onclick="openPlanner()">Calculate Budget</button>
 </section>
 
 <section class="section">
-  <div class="wrap">
-    <h2>Our products</h2>
-    <p>Discover signage products trusted by retail stores, corporates and builders.</p>
-
-    <div class="products">
-      <div class="product">
-        <h3>LED Shop Boards</h3>
-        <p>High-visibility illuminated signage</p>
-        <div class="price">₹850 – ₹1,500 / sq ft</div>
-      </div>
-      <div class="product">
-        <h3>ACP Hoardings</h3>
-        <p>Outdoor & building signage</p>
-        <div class="price">₹1,200 – ₹2,500 / sq ft</div>
-      </div>
-      <div class="product">
-        <h3>3D Letters</h3>
-        <p>Premium branding letters</p>
-        <div class="price">₹1,500 – ₹4,000 / sq ft</div>
-      </div>
+  <h2>Our Products</h2>
+  <div class="products">
+    <div class="card">
+      <img src="assets/images/led.jpg">
+      <h3>LED Boards</h3>
+      <p>High visibility illuminated signage</p>
+      <button onclick="openPlanner()">Calculate</button>
     </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--light)">
-  <div class="wrap">
-    <h2>What our clients say</h2>
-    <p>Rated 4+ stars by businesses across South India.</p>
-
-    <div class="testimonials">
-      <div class="review">
-        <strong>★★★★★</strong>
-        Clean finish and excellent visibility. Highly recommended.
-      </div>
-      <div class="review">
-        <strong>★★★★★</strong>
-        Professional team and transparent pricing.
-      </div>
-      <div class="review">
-        <strong>★★★★☆</strong>
-        Good quality signage delivered on time.
-      </div>
+    <div class="card">
+      <img src="assets/images/acp.jpg">
+      <h3>ACP Hoardings</h3>
+      <p>Durable outdoor branding</p>
+      <button onclick="openPlanner()">Calculate</button>
+    </div>
+    <div class="card">
+      <img src="assets/images/3d.jpg">
+      <h3>3D Letters</h3>
+      <p>Premium brand identity signage</p>
+      <button onclick="openPlanner()">Calculate</button>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="wrap">
-    <h2>Frequently asked questions</h2>
+  <h2>Testimonials</h2>
+  <div class="testimonials">
+    <div class="review">★★★★★ Excellent quality and service.</div>
+    <div class="review">★★★★★ Transparent pricing & delivery.</div>
+    <div class="review">★★★★☆ Very professional team.</div>
+  </div>
+</section>
 
-    <div class="faq">
-      <div class="faq-item">
-        <h4>How is signage pricing calculated?</h4>
-        <p>Pricing depends on size, material, lighting and installation complexity.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Do you provide installation?</h4>
-        <p>Yes, we offer complete fabrication and installation services.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Which locations do you serve?</h4>
-        <p>We serve Andhra Pradesh and Telangana.</p>
-      </div>
-    </div>
+<section class="section">
+  <h2>FAQs</h2>
+  <div class="faq">
+    <details><summary>How much does signage cost?</summary><p>Pricing depends on size, material and installation.</p></details>
+    <details><summary>Is installation included?</summary><p>Installation is provided after site inspection.</p></details>
+    <details><summary>Which areas do you serve?</summary><p>AP & Telangana.</p></details>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div>
-      <strong>V SIGN</strong>
-      <p style="color:var(--muted)">Premium signage solutions</p>
-    </div>
-    <div>
-      <strong>Explore</strong>
-      <a href="products.html">Products</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="testimonials.html">Testimonials</a>
-    </div>
-    <div>
-      <strong>Contact</strong>
-      <a href="contact.html">Get in touch</a>
-    </div>
-  </div>
+  © V SIGN – Premium Signage Solutions
 </footer>
+
+<div class="floating">
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
+  <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
+</div>
+
+<div class="overlay" id="planner">
+  <div class="modal">
+    <h3>Budget Planner</h3>
+    <label>Width (ft)</label>
+    <input type="number" id="w">
+    <label>Height (ft)</label>
+    <input type="number" id="h">
+    <button onclick="calculate()">Estimate</button>
+    <p id="result"></p>
+    <button onclick="closePlanner()">Close</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
+function openPlanner(){document.getElementById("planner").style.display="flex"}
+function closePlanner(){document.getElementById("planner").style.display="none"}
+function calculate(){
+  let w=document.getElementById("w").value;
+  let h=document.getElementById("h").value;
+  if(w&&h){
+    let min=w*h*850,max=w*h*1500;
+    document.getElementById("result").innerText=`₹${min} – ₹${max} approx`;
+  }
+}
+</script>
 
 </body>
 </html>
