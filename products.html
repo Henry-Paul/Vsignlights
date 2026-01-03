@@ -1,129 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Products – V Sign Lights</title>
-
-<style>
-/* ===== RESET ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;color:#0f172a;line-height:1.6}
-a{text-decoration:none;color:inherit}
-
-/* ===== HEADER ===== */
-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
-.nav{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center}
-nav{display:flex;gap:20px}
-nav a{color:#6b7280;font-weight:600}
-.plan-btn{background:#0b5ed7;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer}
-.hamburger{display:none;font-size:24px;cursor:pointer}
-
-@media(max-width:768px){
-  nav{display:none;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:20px}
-  nav.open{display:flex}
-  .hamburger{display:block}
-}
-
-/* ===== PAGE ===== */
-.section{padding:70px 20px;max-width:1200px;margin:auto}
-h1{text-align:center;font-size:36px}
-h2{margin-bottom:20px}
-
-/* ===== PRODUCT GRID ===== */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{border:1px solid #e5e7eb;border-radius:14px;padding:16px}
-.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
-.card h3{margin-top:12px}
-.card p{margin-top:8px;color:#6b7280}
-.actions{margin-top:12px;display:flex;gap:10px}
-.actions button{flex:1}
-
-/* ===== FAQ ===== */
-.faq{margin-top:30px}
-.faq details{border-bottom:1px solid #e5e7eb;padding:14px 0}
-.faq summary{font-weight:600;cursor:pointer}
-.faq p{margin-top:8px;color:#6b7280}
-
-/* ===== MODAL ===== */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center}
-.modal{background:#fff;padding:24px;border-radius:14px;width:90%;max-width:420px}
-
-/* ===== FLOATING ===== */
-.floating{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px}
-.floating a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
-.whatsapp{background:#25d366}
-.call{background:#0b5ed7}
-
-/* ===== FOOTER ===== */
-footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products – V SIGN</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
+  <div class="container nav">
     <strong>V SIGN</strong>
-    <nav id="menu">
+    <div class="nav-links" id="menu">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="gallery.html">Gallery</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <button class="plan-btn" onclick="openPlanner()">Plan Budget</button>
-    </nav>
+      <button class="btn" onclick="openPlanner()">Plan Budget</button>
+    </div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
 
-<section class="section">
+<section class="section container">
   <h1>Our Signage Products</h1>
+  <h2>Designed for visibility, durability and brand impact</h2>
+</section>
 
-  <div class="grid">
+<section class="section container">
+  <div class="products">
 
     <!-- LED -->
     <div class="card">
-      <img src="assets/images/led.jpg">
-      <h3>LED Boards</h3>
-      <p>High-visibility illuminated signage for shops & showrooms.</p>
-      <div class="actions">
-        <button onclick="openPlanner()">Calculate</button>
-        <button>Enquire Now</button>
+      <img src="assets/images/led.jpg" alt="LED Sign Boards">
+      <h3>LED Sign Boards</h3>
+      <p>
+        High-visibility illuminated signage ideal for shops,
+        clinics and showrooms.
+      </p>
+      <div class="card-actions">
+        <button class="btn" onclick="openPlanner()">Calculate Estimate</button>
+        <button class="btn">Enquire Now</button>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Is LED suitable for outdoor use?</summary>
+          <p>Yes. LED boards are weather-resistant and highly visible at night.</p>
+        </details>
+        <details>
+          <summary>How is LED pricing calculated?</summary>
+          <p>Based on size (sq ft), brightness, material and installation.</p>
+        </details>
       </div>
     </div>
 
     <!-- ACP -->
     <div class="card">
-      <img src="assets/images/acp.jpg">
+      <img src="assets/images/acp.jpg" alt="ACP Hoardings">
       <h3>ACP Hoardings</h3>
-      <p>Durable outdoor branding for buildings and highways.</p>
-      <div class="actions">
-        <button onclick="openPlanner()">Calculate</button>
-        <button>Enquire Now</button>
+      <p>
+        Strong aluminium composite panels for outdoor branding
+        and building signage.
+      </p>
+      <div class="card-actions">
+        <button class="btn" onclick="openPlanner()">Calculate Estimate</button>
+        <button class="btn">Enquire Now</button>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Is ACP durable?</summary>
+          <p>Yes. ACP is ideal for long-term outdoor applications.</p>
+        </details>
+        <details>
+          <summary>Does ACP require maintenance?</summary>
+          <p>Very minimal maintenance compared to other materials.</p>
+        </details>
       </div>
     </div>
 
     <!-- 3D -->
     <div class="card">
-      <img src="assets/images/3d.jpg">
-      <h3>3D Letters</h3>
-      <p>Premium dimensional signage for brand identity.</p>
-      <div class="actions">
-        <button onclick="openPlanner()">Calculate</button>
-        <button>Enquire Now</button>
+      <img src="assets/images/3d.jpg" alt="3D Letter Signage">
+      <h3>3D Letter Signage</h3>
+      <p>
+        Premium dimensional letters that enhance brand
+        perception and visibility.
+      </p>
+      <div class="card-actions">
+        <button class="btn" onclick="openPlanner()">Calculate Estimate</button>
+        <button class="btn">Enquire Now</button>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Which materials are used?</summary>
+          <p>Acrylic, stainless steel and aluminium based on requirement.</p>
+        </details>
+        <details>
+          <summary>Are 3D letters illuminated?</summary>
+          <p>They can be non-lit or LED-backlit depending on design.</p>
+        </details>
       </div>
     </div>
 
   </div>
-
-  <div class="faq">
-    <h2>Product FAQs</h2>
-    <details><summary>How is pricing calculated?</summary><p>Based on size, material, lighting and installation.</p></details>
-    <details><summary>Is installation included?</summary><p>Installation is handled after site inspection.</p></details>
-    <details><summary>Which product is best for outdoor use?</summary><p>ACP Hoardings and LED Boards.</p></details>
-  </div>
-
 </section>
 
 <footer>
@@ -135,7 +119,7 @@ footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
   <a class="call" href="tel:+91XXXXXXXXXX">📞</a>
 </div>
 
-<!-- BUDGET PLANNER -->
+<!-- BUDGET PLANNER MODAL -->
 <div class="overlay" id="planner">
   <div class="modal">
     <h3>Budget Planner</h3>
@@ -143,22 +127,22 @@ footer{background:#f4f8ff;padding:20px;text-align:center;margin-top:60px}
     <input type="number" id="w">
     <label>Height (ft)</label>
     <input type="number" id="h">
-    <button onclick="calculate()">Estimate</button>
-    <p id="result"></p>
-    <button onclick="closePlanner()">Close</button>
+    <button class="btn" onclick="calc()">Estimate</button>
+    <div class="estimate" id="result"></div>
+    <button class="btn" onclick="closePlanner()">Close</button>
   </div>
 </div>
 
 <script>
-function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
-function openPlanner(){document.getElementById("planner").style.display="flex"}
-function closePlanner(){document.getElementById("planner").style.display="none"}
-function calculate(){
+function toggleMenu(){menu.classList.toggle("open")}
+function openPlanner(){planner.style.display="flex"}
+function closePlanner(){planner.style.display="none"}
+function calc(){
   let w=document.getElementById("w").value;
   let h=document.getElementById("h").value;
-  if(w&&h){
-    let min=w*h*850,max=w*h*1500;
-    document.getElementById("result").innerText=`₹${min} – ₹${max} approx`;
+  if(w && h){
+    document.getElementById("result").innerText =
+      `₹${w*h*850} – ₹${w*h*1500} approx`;
   }
 }
 </script>
