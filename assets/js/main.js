@@ -86,19 +86,46 @@ function calc() {
 
 let slideIndex = 0;
 
-function startSlider() {
-  const slider = document.getElementById("slider");
+function startSlider(sliderId, direction = 1) {
+  const slider = document.getElementById(sliderId);
   if (!slider) return;
 
   const slides = slider.children.length;
   if (slides <= 1) return;
 
-  setInterval(() => {
-    slideIndex = (slideIndex + 1) % slides;
-    slider.style.transform = `translateX(-${slideIndex * 100}%)`;
-  }, 5000);
+  let index = 0;
+  let interval;
+
+  const move = () => {
+    index = (index + direction + slides) % slides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  const start = () => {
+    interval = setInterval(move, 5000);
+  };
+
+  const stop = () => {
+    clearInterval(interval);
+  };
+
+  // Desktop hover
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+
+  // Mobile touch
+  slider.addEventListener("touchstart", stop);
+  slider.addEventListener("touchend", start);
+
+  start();
 }
 
+/* Init all sliders safely */
+document.addEventListener("DOMContentLoaded", () => {
+  startSlider("slider", 1);          // Testimonials → right
+  startSlider("projectSlider", -1);  // Projects → left
+  startSlider("productSlider", 1);   // Product strategy
+});
 /* -------------------------
    INIT ON PAGE LOAD
 -------------------------- */
