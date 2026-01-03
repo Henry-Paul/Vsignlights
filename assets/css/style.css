@@ -193,3 +193,43 @@ footer{
   70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
   100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
 }
+
+/* =========================
+   EXECUTIVE SPACING SYSTEM
+========================= */
+
+/* Force breathing room between all major blocks */
+section + section {
+  margin-top: 40px;
+}
+
+/* Improve text readability */
+.container > p,
+.container > h2,
+.container > h3 {
+  max-width: 820px;
+}
+
+/* Prevent content sticking to footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Improve mobile spacing */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  h1 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+}
